@@ -10,3 +10,4 @@ web-app/index.gsp
 .project
 .settings
 *.iws
+*.war
