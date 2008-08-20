@@ -1,0 +1,7 @@
+== Changes in version 1.0.2
+
+* Added delicious.com URL to member profile page
+* Added location info to member and project listings
+* Added more categories to 'Grails affiliations' list
+* Changed title for location fields: (suggested convention: City, Region(State), Country)
+* Linked 'current location' field on member profile page

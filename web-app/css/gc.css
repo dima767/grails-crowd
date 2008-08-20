@@ -1,0 +1,244 @@
+/* COLORS
+	----------------------------------------
+   Text default: 	#333
+   Links: 			#0063dc
+   Borders:			#ddd
+
+
+	HACKS
+   ----------------------------------------
+   Use *property:property-value for IE6 and IE7
+   Use _property:property-value for IE6
+   Use conditional comments for IE specific style sheets or <!--[if !IE]><!--> ... <!--<![endif]--> for browsers other than IE
+   Can also add a wrapping element for IE (<div id="ie"> ...) and then use #ie ... {} to apply IE specific styles
+
+*/
+
+/* RESET
+------------------------------------------------------------------------------------------------------------------------------------------- */
+   cite, em {font-style:normal;}
+   th, strong, h1, h2, h3, h4, h5, h6 {font-weight:900;}
+   img, form, fieldset, abbr, acronym {border:0;}
+   table {border:0; border-collapse:collapse; border-spacing:0; empty-cells:show;}
+   caption, th, td {text-align:left; vertical-align:top;}
+   code, kbd, samp, pre, tt, var, input[type='text'], input[type='password'], textarea, select {font:inherit; font-size:12px; white-space:normal; font-family:monospace; }
+   pre {white-space:pre;}
+   pre * {font-size:12px; white-space:pre;}
+   abbr, acronym {text-transform:uppercase; font-size:10px; letter-spacing:0.1em;}
+   abbr[title], acronym[title], dfn[title] {cursor:help; border-bottom:1px solid #ddd;}
+   sup, sub {font-size:10px;}
+   sup {vertical-align:super; *vertical-align:middle; *position:relative; *top:-.5em; *font-size:12px;}
+   sub {vertical-align:sub; *vertical-align:middle; *position:relative; *top:.5em; *font-size:12px;}
+
+/* MARGINS & PADDINGS */
+	p, ul, ol, dl, pre, blockquote, table, form {margin:0 0 18px;}
+
+/* LINKS */
+   a {position:relative; padding:0.1em 0 0.1em; text-decoration:none;}
+   a:link {color:#0063dc;}
+   a:visited {color:#0063dc;}
+   a:hover {color:#f0c;}
+   a:link, a:hover, a:active, a:focus, a:visited {text-decoration:underline;}
+   a, a img, a abbr, a acronym {border:0; outline:0;}
+   a abbr, a acronym {*text-decoration:underline} /* IE 7 bug */
+
+/* FORMS */
+   fieldset {padding:0 1em 1em 1em; margin:1.6em 0;} /* padding-top is margin-top for fieldsets in Opera */
+   legend {padding-left:.8em; padding-right:.8em; *margin-bottom:1.5em;}
+   legend+* {margin-top:1em; *margin-top:0;} /* compensates for the opera margin bug */
+   textarea, input {padding:1px 0.3em 2px; vertical-align:middle;} /*.3em .4em .15em .4em;*/
+   input[type='submit'], input[type='button'] {*padding:0} /* IE 7 button fix */
+   option {padding-top:1px;} /* .4*/
+   button {padding:0.3em 0.5em;}
+   label {color:#150517; font-weight:bold;}
+
+/* BASE SIZES - Calulate header margins: TOP: line-height/size, BOTTOM: TOP/2 */
+   h1 {font-size:2.1em; margin:0.1em 0.1em;}
+   h2 {font-size:1.5em; margin:1.07em 0 .535em;}
+   h3 {font-size:1.4em; margin:1.14em 0 .57em; color:#555;}
+   h4 {font-size:1.3em; margin:1.23em 0 .615em;}
+   h5 {font-size:1.2em; margin:1.33em 0 .67em;}
+   h6 {font-size:1em; margin:1.6em 0 .8em;}
+
+/* LISTS */
+   dt {margin-top: .8em; margin-bottom:9px;}
+   ul, ol {margin-left:10px; padding-left:0; *padding-left:15px; *margin-left:-15px; list-style:disc inside; color:#555;} /*2.2em*/
+   ol {list-style:decimal outside;}
+   ul ul, ol ul, ul ol, ol ol {margin-bottom:0;}
+
+/* BLOCKQUOTE */
+   blockquote {background:transparent url(../images/quote-open.gif) no-repeat scroll 0 2px; color:#000; margin:18px 0 27px 36px; padding:0; text-indent:18px; text-align:left;}
+   blockquote p.first {text-indent:18px;}
+   blockquote p {padding:9px 0; margin:0; font-style:italic; text-indent:0; line-height:1.2;}
+   blockquote p.last {position:relative; top:9px; background:transparent url(../images/quote-close.gif) no-repeat scroll 100% 2px; display:inline; padding-right:18px; text-indent:0;}
+
+
+   html, body {background:#fff; margin:0; padding:0; border:0;}
+   body {font-family:arial,helvetica,sans-serif;
+                  font-size:75%;
+                  font-size-adjust:none;
+                  font-style:normal;
+                  font-variant:normal;
+                  font-weight:normal;
+                  line-height:1.4;
+                  color:#333 none repeat scroll 0%; text-align:center;}
+   hr {border:0; background:#ccc; color:#ccc; height:1px; overflow:hidden;}
+
+   #wrap {position:relative; left:0; top:0; margin:0 auto; padding-top:18px; width:960px; text-align:left;}
+
+
+ /* TABLES */
+    table.data {margin-bottom:2em;}
+    table.data caption {background:#999; border:1px solid #999; color:#fff; text-align:left;}
+    table.data thead th {background:#ddd; color:#666;}
+    table.data tbody th td {background:#ddd; color:#666;}
+    table.data th, table.data td {border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+    /* new row */
+    table.data tr.new td {font-weight:bold; background:#fafad2;}
+
+/*COLORS */
+   .pink {color:#f0c;}
+
+/* HEADER
+   ------------------------------------------------------------------------------------------------------------------------------------------- */
+   #header {float:left; margin:0 0 10px; padding:1px 0; width:960px; position:relative;}
+
+   /* logo | branding */
+      #header h1 {float:left; margin:0; padding:0 0 0 8px; width:249px; height:106px; overflow:hidden; xline-height:22px; font-size:1em;}
+      #header h1 a {display:block; outline:0; position:relative; margin:0; padding:0; width:249px; height:106px; overflow:hidden; xtext-indent:-9999px;}
+      #header h1 img {position:absolute; left:0; top:0;}
+
+   /* meta navigation */
+      #nav-meta {font-size:11px; float:right; color:#777; margin:10px 10px 0 0; padding:0;}
+      #nav-meta span {color:#ddd; font-size:13px;}
+         #nav-meta a:link, #nav-meta a:visited {color:#36c; padding:0 5px; text-decoration:none; background-color:#fff;}
+         #nav-meta a:hover {color:#fff; text-decoration:none; background:#0063DC;}
+
+
+   /* site search */
+      #search {position:relative; z-index:2; float:right; clear:right; margin:10px 10px -24px 0; *margin-top:15px;}
+      input.btn {padding:1.0; font-weight:bold; color:#333; vertical-align:middle; *position:relative; *top:-1px;}
+
+   /* main navigation */
+      #nav-main {clear:both; float:left; margin:0; *margin:18px 0 0; border-bottom:1px solid #ddd; padding:1px 0 0; width:960px;}
+         #nav-main li {float:left; border-left:1px solid #ddd; display:inline; font-size:1.2em;}
+         #nav-main li.first {border:0;}
+            #nav-main a, #nav-main a:link, #nav-main a:visited {position:relative; display:block; padding:5px 10px; text-decoration:none; color:#0063dc;}
+            #nav-main a:hover {text-decoration:underline; color:#f0c;}
+            #nav-main a:focus {text-decoration:underline; color:#0063dc;}
+            #nav-main a:active {color:lime; outline:1px dotted #ddd;}
+
+	.page-section-header {color:#F0C; background-color:#E5ECF9;}
+
+
+
+/* NAVIGATION (CONTEXT)
+   ------------------------------------------------------------------------------------------------------------------------------------------- */
+   #nav-context {clear:left; margin-left:10px; padding:1px 0; width:950px;}
+   #nav-context h2 {margin:0; padding:0; line-height:1.0;}
+   #nav-context h2 a {font-weight:400; color:#0063dc;}
+   #nav-context a, #nav-context a:link, #nav-context a:visited {padding:0em 0 0em; text-decoration:none;}
+   #nav-context a:hover, #nav-context a:active { color: #FFFFFF; text-decoration: none; background: #0063DC; }
+
+/* CONTENT
+   ------------------------------------------------------------------------------------------------------------------------------------------- */
+   .content {overflow:hidden; margin-top:10px; border-top:1px; padding:0px 0; width:980px;}
+      .main {position:relative; float:left; width:600px; margin:0; padding:1px 10px 18px 10px; border-right:1px; xbackground:red;}
+         #sign-up {float:left; width:390px; min-height:200px; xbackground:blue; xmargin-left:20px;}
+         #sign-in {float:left; width:390px; min-height:200px; xbackground:blue; xmargin-left:20px;}
+      .sub {float:right; margin:0 0 0 -1px; border-left:1px; padding:0 10px 18px 19px; width:320px; xbackground:yellow;}
+
+   .btn {vertical-align:middle; xposition:absolute; xbottom:0;}
+   .invisible {display:none;}
+
+   .meta-info {color:#777; margin:10px 10px 0 0; padding:0;}
+                         
+    /* boxes */
+   .box {background:#E5ECF3 none repeat scroll 0% 0%; border:4px solid #d3d3d3; padding:18px; -moz-border-radius:10px; -webkit-border-radius:10px;}
+   .transparent-box {background:#fff; border:1px solid #d0cfcf; padding:20px; -moz-border-radius:10px; -webkit-border-radius:10px;}
+   .description-box {background:#fffedc; border:1px solid #d3d3d3; padding:17px; -moz-border-radius:10px; -webkit-border-radius:10px;}
+   .error-box {background:#fff; font-weight:bold; color:#ff0000; border:2px solid #ff0000; padding:10px; margin:0;}
+   .info-box {background:#C5FBCA; font-weight:bold; border:2px solid #c8fca5; padding:10px; margin:0;}
+   .comments-box {background:#EDECE3; none repeat scroll 0% 0%; border:0.2px solid #EEEEEE; padding:10px;}    
+
+   .content-font {font-family:arial,helvetica,sans-serif;
+                  font-size:110%;
+                  font-size-adjust:none;
+                  font-style:normal;
+                  font-variant:normal;
+                  font-weight:normal;
+                  line-height:1.4;
+    }
+
+    a.sign-up {display:block; width:230px; height:27px; position:relative; xbottom:0px; overflow:hidden; text-decoration:none;}
+    a.sign-up span {display:block; width:230px; height:27px; position:absolute; top:0; left:0; background:url(../images/sign-up.gif) no-repeat;}
+
+    li p {margin:0; color:#000;}
+
+    a.inline-link:link, a.inline-link:visited {color:#36c; background-color:#fff; text-decoration: none;}
+    a.inline-link:hover, a.step:hover, a.prevLink:hover, a.nextLink:hover { color: #FFFFFF;
+                                                                            text-decoration: none;
+                                                                            background: #0063DC; }
+
+    /* pagination */
+    .prevLink, .step, .currentStep, .nextLink { background:#FFFFFF none repeat scroll 0%;
+                                                border:2px solid #DDDDDD;
+                                                margin-left:10px;
+                                                padding:2px 6px;
+                                                font-size:11px; }
+
+    .currentStep { background:#FFFFFF none repeat scroll 0%;
+                   color:#FF0084;
+                   font-size:11px;
+                   font-weight:bold;
+                   padding:2px 6px;
+                   vertical-align:top; }
+
+
+/* COLUMNS
+   ------------------------------------------------------------------------------------------------------------------------------------------- */
+   .cols {overflow:hidden; padding:0 10px; border-top:1px solid #ddd;}
+      .cols h3 {margin-top:0;}
+      .cols .left {float:left; margin:18px 0 18px -1px; *margin-left:0; border-right:1px solid #ddd; padding-right:15px; width:455px;}
+      .cols .right {float:right; margin:18px 0 18px -1px; border-left:1px solid #ddd; padding-left:15px; width:455px;}
+
+/* FORMS except IE
+   ------------------------------------------------------------------------------------------------------------------------------------------- */
+        textarea, input[type='text'], input[type='password'] {
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;            
+        }
+		
+		input[type='text'], input[type='password'] {
+            height: 28px;
+			padding: 4px;            
+        }					
+
+        select {
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 13px;
+        }
+
+        textarea:hover, input[type='text']:hover, input[type='password']:hover, select:hover {
+            border-color: #aaa;
+        }
+
+        textarea:focus, input[type='text']:focus, input[type='password']:focus, select:focus {
+            border-color: #eac117;
+            font-weight: bold;
+            background: #fffedc
+        }
+
+        input[type='button'], input[type='submit'], input[type='checkbox'], input[type='image'], input[type='radio'], input[type='reset'], select, button {
+            cursor: pointer;
+        }
+
+
+
+/* FOOTER
+   ------------------------------------------------------------------------------------------------------------------------------------------- */
+   #footer {font-size:11px; clear:both; margin-top:18px; border-top:1px solid #ddd; padding:18px 10px; width:940px;}
+   #footer .clear {clear:both; border-top:1px solid #ddd;}
+   #footer img {float:right;}

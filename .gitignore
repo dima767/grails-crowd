@@ -1,0 +1,12 @@
+.svn
+plugins/*
+html
+stacktrace.log
+test/reports
+web-app/WEB-INF
+web-app/plugins
+web-app/index.gsp
+.classpath
+.project
+.settings
+*.iws
