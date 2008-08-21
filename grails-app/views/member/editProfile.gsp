@@ -25,7 +25,7 @@
                             <p><label for="displayName">Display name:</label><br/> <input type="text" name="displayName" id="displayName"
                                     value="${member.displayName}"/>
 
-                            <p><label for="about">About me:</label><br/><textarea name="about" cols="53" rows="10"
+                            <p><label for="about">About me</label> (<a href="http://hobix.com/textile" target="_blank">Textile enabled</a>):<br/><textarea name="about" cols="53" rows="10"
                                     id="about">${member.about}</textarea></p>
                         </div>
                         <br/>
