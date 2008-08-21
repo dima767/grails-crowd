@@ -5,3 +5,10 @@
 * Added more categories to 'Grails affiliations' list
 * Changed title for location fields: (suggested convention: City, Region(State), Country)
 * Linked 'current location' field on member profile page
+
+== Changes in version 1.0.3
+
+* Added Textile reference links on the view forms for Textile enabled properties
+* Got rid of the time component in the niceDate taglib
+* Added link to the source code on GitHub to the global footer section of all pages
+* Menu items on the public home page show 'live' number of members and projects in the system. Also they link to alphabetic listings instead of 'discovered' mode listing
