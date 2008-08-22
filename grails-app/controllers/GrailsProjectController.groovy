@@ -168,6 +168,10 @@ class GrailsProjectController extends SecureController {
             render(view: '404')
             return
         }
+		//TODO: refactor into filter?
+        if (!loggedIn() || !(grailsProject.isCreator(session.memberId))) {
+            grailsProject.recordOnePublicViewIfEligible(request.remoteAddr)
+        }
         render(view: 'viewProject', model: [grailsProject: grailsProject])
     }
 

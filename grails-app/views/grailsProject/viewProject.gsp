@@ -133,6 +133,9 @@
                     <p><input class="btn" type="submit" name="requestParticipation" id="requestParticipation" value="Request to join as a participant"/></p>
                 </g:form>
             </g:if>
+			
+			<hr />									
+				<span class="meta-info">This project has been viewed <strong>${grailsProject.numberOfPublicViews}</strong> time(s)</span>
             
         </div> <!-- sub -->
 
