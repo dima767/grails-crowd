@@ -29,39 +29,37 @@
 			
 			<div class="public-home-content-left">	
 		
-				<h4 class="page-section-header">Newest members</h4>
+				<g:if test="${newestMembers}">				
+					<h4 class="page-section-header">Newest members</h4>
                 
-                    <span class="content-font">
-                            <a class="inline-link" href="http://google.com">John Doe</a> - North Brunswick, NJ, United States of America
-                            <hr />
-                        <a class="inline-link" href="http://google.com">John Doe</a> - USA
-                            <hr />
-						<a class="inline-link" href="http://google.com">John Doe</a>
-                            <hr />
-						<a class="inline-link" href="http://google.com">John Doe</a> - Greater New York area
-                            <hr />
-						<a class="inline-link" href="http://google.com">John Doe</a>
-                            <hr />
-                    </span>
+                    	<span class="content-font">
+                     	       <g:each in="${newestMembers}" var="member">
+                    				<g:link controller="member" action="viewProfile" params="[_name:member.name]">${member.displayName}</g:link>
+									<g:if test="${member.location}">	
+										<span class="meta-info"> - ${member.location}</span>
+									</g:if>
+                    				<hr />
+                				</g:each>								                        
+                    	</span>
+				</g:if>
 
 			</div>
 
 			<div class="public-home-content-right">
 				
-				<h4 class="page-section-header">Newest projects</h4>
+				<g:if test="${newestProjects}">				
+					<h4 class="page-section-header">Newest projects</h4>
                 
-                    <span class="content-font">
-                            <a class="inline-link" href="http://google.com">John Doe</a> - North Brunswick, NJ, United States of America
-                            <hr />
-                        <a class="inline-link" href="http://google.com">John Doe</a> - USA
-                            <hr />
-						<a class="inline-link" href="http://google.com">John Doe</a>
-                            <hr />
-						<a class="inline-link" href="http://google.com">John Doe</a> - Greater New York area
-                            <hr />
-						<a class="inline-link" href="http://google.com">John Doe</a>
-                            <hr />
-                    </span>
+                    	<span class="content-font">
+                     			<g:each in="${newestProjects}" var="project">
+                    				<g:link controller="grailsProject" action="viewProject" id="${project.id}">${project.name}</g:link>
+									<g:if test="${project.primaryLocation}">	
+										<span class="meta-info"> - ${project.primaryLocation}</span>
+									</g:if>
+                    				<hr />
+                				</g:each>								                        
+                    	</span>
+				</g:if>	
 						
 			</div>
 		

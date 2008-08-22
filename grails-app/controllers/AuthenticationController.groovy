@@ -15,10 +15,6 @@ class AuthenticationController extends ControllerSupport {
             def member = Member.findByNameAndPassword(params.name, params.password.encodeAsEncryptedPassword())
             if (member) {
                 session.memberId = member.id
-                if (session.memberToBeContacted) {
-                    session.originalRequestParams = [controller: 'member', action: 'viewProfile', params: [_name: session.memberToBeContacted]]
-                    session.memberToBeContacted = null
-                }
                 redirectToAppropriateControllerAndActionForLoggedInMember()
             }
             else {
@@ -33,9 +29,6 @@ class AuthenticationController extends ControllerSupport {
     def handleLogout = {
         if (session.memberId) {
             session.memberId = null
-        }
-        if(session.memberToBeContacted) {
-            session.memberToBeContacted = null
         }
         redirect(uri: '/')
     }

@@ -1,15 +1,19 @@
+import grailscrowd.core.*
+
 class HomeRouterController extends SecureController {
 
     def allowedMethods = [index: 'GET']
 
     def index = {
         if (loggedIn()) {
-            //TODO: prepare member's data for his/her 'home' (dashboard) view (similar to flickr)
             render(view: '/member/home', model: [loggedInMember: freshCurrentlyLoggedInMember()])
             return
         }
         else {
-            //TODO: prepare public data for public 'home' view (similar to flickr)
-            render(view: '/public/home')}
+			//5 (at the most) newest members and projects registered within the last 7 days			
+			def newestMembers = Member.findAllByJoinedOnBetween(new Date() - 7, new Date(), [max:5, sort:"joinedOn", order:"desc"])            
+			def newestProjects = GrailsProject.findAllByDateCreatedBetween(new Date() - 7, new Date(), [max:5, sort:"dateCreated", order:"desc"])
+			render(view: '/public/home', model: [newestMembers: newestMembers, newestProjects: newestProjects])
+		}
     }
 }
