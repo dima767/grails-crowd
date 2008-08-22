@@ -28,8 +28,8 @@ class Message {
     static belongsTo = [mailbox: Mailbox]
 
     static constraints = {
-        subject(blank: false, maxSize: 50)
-        body(blank: false, maxSize: 1000)
+        subject(blank: false, maxSize: 500)
+        body(blank: false, maxSize: 4000)
         projectParticipationId(nullable: true)
         fromMember(blank: false, maxSize: 50)
     }
