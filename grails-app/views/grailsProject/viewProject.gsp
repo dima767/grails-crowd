@@ -12,6 +12,8 @@
 
     <div id="nav-context">
         <h1><g:message code="project.view.title" /> ${grailsProject.name}</h1>
+		<span class="meta-info">Created on <g:niceDate date="${grailsProject.dateCreated}" /></span>
+		<br />
 
         <g:if test="${grailsProject.creator.id == loggedInMember?.id}">
             <h6>[ <g:link class="inline-link" controller="grailsProject" action="editProject" id="$grailsProject.id"><g:message code="project.view.link.edit" /></g:link> ]</h6>

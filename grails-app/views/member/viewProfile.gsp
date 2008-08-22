@@ -18,6 +18,8 @@
         <g:else>
             <h1>Member: ${member.displayName}</h1>
         </g:else>
+		<span class="meta-info">Joined on <g:niceDate date="${member.joinedOn}" /></span>
+		<br />
         &rarr; <g:link class="inline-link" controller="tag" action="cloudForMember" params="[_name:member.name]">Tags</g:link>
     </div>
 
