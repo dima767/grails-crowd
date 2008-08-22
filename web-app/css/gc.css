@@ -84,7 +84,7 @@
                   color:#333 none repeat scroll 0%; text-align:center;}
    hr {border:0; background:#ccc; color:#ccc; height:1px; overflow:hidden;}
 
-   #wrap {position:relative; left:0; top:0; margin:0 auto; padding-top:18px; width:960px; text-align:left;}
+   #wrap {position:relative; left:0; top:0; margin:0 auto; padding-top:18px; width:1000px; text-align:left;}
 
 
  /* TABLES */
@@ -120,7 +120,7 @@
       input.btn {padding:1.0; font-weight:bold; color:#333; vertical-align:middle; *position:relative; *top:-1px;}
 
    /* main navigation */
-      #nav-main {clear:both; float:left; margin:0; *margin:18px 0 0; border-bottom:1px solid #ddd; padding:1px 0 0; width:960px;}
+      #nav-main {clear:both; float:left; margin:0; *margin:18px 0 0; border-bottom:1px solid #ddd; padding:1px 0 0; width:980px;}
          #nav-main li {float:left; border-left:1px solid #ddd; display:inline; font-size:1.2em;}
          #nav-main li.first {border:0;}
             #nav-main a, #nav-main a:link, #nav-main a:visited {position:relative; display:block; padding:5px 10px; text-decoration:none; color:#0063dc;}
@@ -142,11 +142,14 @@
 
 /* CONTENT
    ------------------------------------------------------------------------------------------------------------------------------------------- */
-   .content {overflow:hidden; margin-top:10px; border-top:1px; padding:0px 0; width:980px;}
-      .main {position:relative; float:left; width:600px; margin:0; padding:1px 10px 18px 10px; border-right:1px; xbackground:red;}
+   .content {overflow:hidden; margin-top:10px; border-top:1px; padding:0px 0; width:990px;}
+      .main {position:relative; float:left; width:610px; margin:0; padding:1px 10px 18px 10px; border-right:1px; xbackground:red;}
          #sign-up {float:left; width:390px; min-height:200px; xbackground:blue; xmargin-left:20px;}
          #sign-in {float:left; width:390px; min-height:200px; xbackground:blue; xmargin-left:20px;}
-      .sub {float:right; margin:0 0 0 -1px; border-left:1px; padding:0 10px 18px 19px; width:320px; xbackground:yellow;}
+      .sub {float:right; margin:0 0 0 -1px; border-left:1px; padding:0 10px 18px 19px; width:330px; xbackground:yellow;}
+
+	  .public-home-content-left {float:left; width:430px; margin:0; padding:1px 10px 18px 10px; border-right:1px; xbackground:red;}
+	  .public-home-content-right {float:right; margin:0 0 0 -1px; border-left:1px; padding:0 10px 18px 19px; width:430px; xbackground:yellow;}
 
    .btn {vertical-align:middle; xposition:absolute; xbottom:0;}
    .invisible {display:none;}

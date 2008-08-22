@@ -42,7 +42,7 @@ class MemberController extends SecureController {
     }
 
     def findLastSevenDays = {
-        def members = Member.findAllByJoinedOnBetween(new Date() - 7, new Date())
+        def members = Member.findAllByJoinedOnBetween(new Date() - 7, new Date(), [max:5, sort:"joinedOn", order:"desc"])
         render(view: 'last7Days', model: [members: members])
     }
 

@@ -24,5 +24,51 @@
             <li class="first"><g:link controller="member" action="findByName">${grailscrowd.core.Member.count()} registered member(s)</g:link></li>
             <li><g:link controller="grailsProject" action="findByName">${grailscrowd.core.GrailsProject.count()} registered project(s)</g:link></li>                    
         </ul>
+		
+		<div class="content">
+			
+			<div class="public-home-content-left">	
+		
+				<h4 class="page-section-header">Newest members</h4>
+                
+                    <span class="content-font">
+                            <a class="inline-link" href="http://google.com">John Doe</a> - North Brunswick, NJ, United States of America
+                            <hr />
+                        <a class="inline-link" href="http://google.com">John Doe</a> - USA
+                            <hr />
+						<a class="inline-link" href="http://google.com">John Doe</a>
+                            <hr />
+						<a class="inline-link" href="http://google.com">John Doe</a> - Greater New York area
+                            <hr />
+						<a class="inline-link" href="http://google.com">John Doe</a>
+                            <hr />
+                    </span>
+
+			</div>
+
+			<div class="public-home-content-right">
+				
+				<h4 class="page-section-header">Newest projects</h4>
+                
+                    <span class="content-font">
+                            <a class="inline-link" href="http://google.com">John Doe</a> - North Brunswick, NJ, United States of America
+                            <hr />
+                        <a class="inline-link" href="http://google.com">John Doe</a> - USA
+                            <hr />
+						<a class="inline-link" href="http://google.com">John Doe</a>
+                            <hr />
+						<a class="inline-link" href="http://google.com">John Doe</a> - Greater New York area
+                            <hr />
+						<a class="inline-link" href="http://google.com">John Doe</a>
+                            <hr />
+                    </span>
+						
+			</div>
+		
+		</div>
+
+		<div id="footer">            
+            <a class="inline-link" href="http://twitter.com/grailscrowd" target="_blank">Follow on Twitter</a> | <a class="inline-link" href="http://getsatisfaction.com/grailscrowd" target="_blank">Report a problem or make a suggestion </a> | <a class="inline-link" href="http://grails.org" target="_blank">Developed with Grails</a> | <a class="inline-link" href="http://github.com/dima767/grails-crowd/tree/master" target="_blank">The code for this site is open source</a>
+        </div>
 </body>
 </html>
