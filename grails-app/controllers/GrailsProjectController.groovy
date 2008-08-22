@@ -195,7 +195,7 @@ class GrailsProjectController extends SecureController {
         def grailsProject = GrailsProject.get(params.id)
 
         render(feedType: "atom") {
-            title = grailsProject.name
+            title = "Grails Crowd project ${grailsProject.name} comments"
             description = grailsProject.description
             link = createLink(controller: "grailsProject", action: "commentsFeed", id: grailsProject.id)
 

@@ -4,7 +4,7 @@
     <title><g:message code="project.view.dom.title" /> ${grailsProject.name}</title>
 
     <meta name="layout" content="grailscrowd" />
-    <!-- <feed:meta kind="atom" version="1.0" controller="grailsProject" action="commentsFeed"/> -->
+    <feed:meta kind="atom" version="1.0" controller="grailsProject" action="commentsFeed" id="${grailsProject.id}"/>
 </head>
 
 
