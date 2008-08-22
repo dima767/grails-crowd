@@ -24,11 +24,13 @@ class Member extends NumberOfViewsTrackable implements Comparable {
     String flickrProfileName
     String friendFeedProfileName
 	String deliciousProfileName
+	String ohlohProfileName
 
     private static FLICKR_BASE_URI = 'http://flickr.com'
     private static TWITTER_BASE_URI = 'http://twitter.com'
     private static FRIEND_FEED_BASE_URI = 'http://friendfeed.com'
 	private static DELICIOUS_BASE_URI = 'http://delicious.com'
+	private static OHLOH_BASE_URI = 'http://www.ohloh.net/accounts'
 
     static constraints = {
         name(blank: false, unique: true, matches: "[a-zA-Z0-9_]+")
@@ -48,6 +50,7 @@ class Member extends NumberOfViewsTrackable implements Comparable {
         flickrProfileName(nullable: true)
         friendFeedProfileName(nullable: true)
 		deliciousProfileName(nullable: true)
+		ohlohProfileName(nullable: true)
     }
 
     static hasMany = [projectParticipations: ProjectParticipation, affiliations: GrailsAffiliation, comments: Comment,
@@ -95,13 +98,17 @@ class Member extends NumberOfViewsTrackable implements Comparable {
         this.deliciousProfileName != null ? "$DELICIOUS_BASE_URI/$deliciousProfileName" : null
     }
 
+	def getOhlohProfileUri() {
+        this.ohlohProfileName != null ? "$OHLOH_BASE_URI/$ohlohProfileName" : null
+    }
+
     def availableForHireAsString() {
         availableForHire ? 'Yes' : 'No'
     }
 
     def hasAnyOtherProfiles() {
         (this.homePageUri != null) || (this.linkedInProfileUri != null) || (this.twitterProfileName != null) ||
-                (this.friendFeedProfileName != null) || (this.flickrProfileName != null) || (this.deliciousProfileName != null)
+                (this.friendFeedProfileName != null) || (this.flickrProfileName != null) || (this.deliciousProfileName != null) || (this.ohlohProfileName != null)
     }
 
     def hasAnyInvolvementWithGrails() {

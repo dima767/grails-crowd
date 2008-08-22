@@ -92,6 +92,11 @@
                             <br />
                             <br />
                         </g:if>
+						<g:if test="${member.ohlohProfileUri}">
+                            <label>Ohloh profile:</label> <a href="${member.ohlohProfileUri}" target="_blank">${member.ohlohProfileUri}</a>
+                            <br />
+                            <br />
+                        </g:if>
                     </span>
                 </p>
             </g:if>

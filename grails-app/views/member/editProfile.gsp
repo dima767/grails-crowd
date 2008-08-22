@@ -53,6 +53,8 @@
                                 <input type="text" size="55" name="flickrProfileName" id="flickrProfileName" value="${member.flickrProfileName}"/></p>
 							<p><label for="deliciousProfileName">My Delicious profile name:</label><br/>
                                 <input type="text" size="55" name="deliciousProfileName" id="deliciousProfileName" value="${member.deliciousProfileName}"/></p>
+							<p><label for="ohlohProfileName">My Ohloh profile name:</label><br/>
+                                <input type="text" size="55" name="ohlohProfileName" id="ohlohProfileName" value="${member.ohlohProfileName}"/></p>
                         </div>
                         <br/>
 
