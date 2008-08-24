@@ -34,11 +34,11 @@
                 
                     	<span class="content-font">
                      	       <g:each in="${newestMembers}" var="member">
-                    				<g:link controller="member" action="viewProfile" params="[_name:member.name]">${member.displayName}</g:link>
+                    				<avatar:gravatar email="${member.email}" defaultGravatarUrl="${createLinkTo(dir:'images', file:'default-gravatar-50.png', absolute:'true').encodeAsURL()}" size="50"/> <g:link controller="member" action="viewProfile" params="[_name:member.name]">${member.displayName}</g:link>
 									<g:if test="${member.location}">	
 										<span class="meta-info"> - ${member.location}</span>
 									</g:if>
-                    				<hr />
+									<hr />                    				
                 				</g:each>								                        
                     	</span>
 				</g:if>

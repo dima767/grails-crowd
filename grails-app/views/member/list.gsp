@@ -17,8 +17,7 @@
         <div class="main">
             <span class="content-font">
                 <g:each in="${members}" var="member">
-                    <g:render template="/shared/memberLinkAndShortenedAbout" model="[member:member]" />
-                    <hr />
+                    <g:render template="/shared/memberLinkAndShortenedAbout" model="[member:member]" />                    
                 </g:each>
             </span>
 
