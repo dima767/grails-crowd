@@ -65,7 +65,8 @@
             </g:if>
                   
             <div id="comments">
-                <h4 class="page-section-header"><g:message code="project.view.comments.title" /> (${grailsProject.comments.size()}) :</h4>
+                <h4 class="page-section-header"><g:message code="project.view.comments.title" /> (${grailsProject.comments.size()}) :<div style="text-align: right;">Atom feed <g:link controller="grailsProject" action="commentsFeed" id="${grailsProject.id}"><img border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link>
+</div></h4>
 
                 <g:each var="comment" in="${grailsProject.comments}">               
                     	<div class="comments-box">

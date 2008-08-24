@@ -96,7 +96,7 @@ class UrlMappings {
         "/projects/updatable/$id"(controller: 'grailsProject', action: 'updateProject') //POST
 
         //********* COMMENTS **********************************************************/        
-        "/projects/$id/comments/all"(controller: 'grailsProject', action: 'commentsFeed') //GET
+        "/projects/$id/comments/feed/atom"(controller: 'grailsProject', action: 'commentsFeed') //GET
 
         "/projects/$id/comments"(controller: 'grailsProject', action: 'postComment') //POST
 
