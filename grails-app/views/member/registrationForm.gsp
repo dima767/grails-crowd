@@ -39,8 +39,12 @@
                     </p>
 
                 <p>
-                    <label for="email">Email Address:</label><br/>
+                    <label for="email">Email Address</label>:
+					<br/>					
                     <g:textField size="30" name="email" id="email" value="${member?.email}"/>
+					<br/>
+					<br/>
+					<span class="meta-info">Associate this email address with an avatar for free at <a href="http://gravatar.com/" target="_blank">gravatar.com</a></span>
                 </p>
 
                 <p>

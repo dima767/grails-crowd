@@ -144,7 +144,7 @@
    ------------------------------------------------------------------------------------------------------------------------------------------- */
    .content {overflow:hidden; margin-top:10px; border-top:1px; padding:0px 0; width:990px;}
       .main {position:relative; float:left; width:610px; margin:0; padding:1px 10px 18px 10px; border-right:1px; xbackground:red;}
-         #sign-up {float:left; width:390px; min-height:200px; xbackground:blue; xmargin-left:20px;}
+         #sign-up {float:left; width:450px; min-height:200px; xbackground:blue; xmargin-left:20px;}
          #sign-in {float:left; width:390px; min-height:200px; xbackground:blue; xmargin-left:20px;}
       .sub {float:right; margin:0 0 0 -1px; border-left:1px; padding:0 10px 18px 19px; width:330px; xbackground:yellow;}
 

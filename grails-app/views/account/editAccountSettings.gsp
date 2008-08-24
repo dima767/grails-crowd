@@ -37,9 +37,10 @@
                     </g:form>
 
 					<g:form name="change-email-box" controller="account" action="changeEmail" method="post">
-                        <h2 class="page-section-header">Change your email</h2>
-                        <div class="box">
+                        <h2 class="page-section-header">Change your email</h2>						                        
+						<div class="box">							
                             <p><label for="email">Email Address:</label><br/> <input type="text" size="30" name="email" id="email" value="${loggedInMember.email}"/></p>
+							<span class="meta-info">Associate this email address with an avatar for free at <a href="http://gravatar.com/" target="_blank">gravatar.com</a></span>
                         </div>
                         <br />
                         <p><g:submitButton class="btn" name="save" value="Save changes" /></p>
