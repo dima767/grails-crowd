@@ -12,7 +12,7 @@
     <div id="nav-context">
         <!-- TODO: encapsulate these type of checks in taglib? -->
         <g:if test="${loggedInMember?.id == member.id}">
-            <h1>${member.name} / ${member.displayName}</h1>			
+            <h1><avatar:gravatar email="${member.email}" defaultGravatarUrl="${createLinkTo(dir:'images', file:'default-gravatar-80.png', absolute:'true').encodeAsURL()}" size="80"/> ${member.name} / ${member.displayName}</h1>			
             <h6>[ <g:link class="inline-link" controller="member" action="editProfile">edit profile</g:link> ] | [ <g:link class="inline-link" controller="account">edit account settings</g:link> ]</h6>
         </g:if>
         <g:else>

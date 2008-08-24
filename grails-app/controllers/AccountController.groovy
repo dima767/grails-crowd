@@ -44,17 +44,12 @@ class AccountController extends SecureController {
         member.properties = params		        
 		if(member.save()) {
         	onUpdateAttempt 'Email has been changed successfuly.', true
+			render(view: 'editAccountSettings')
 			return
 		}
         else {
 			render(view: 'editAccountSettings', model: [formBean: member])
 		}
-    }
-
-    private onUpdateAttempt(message, success) {
-        flash.messageClass = success ? 'info-box' : 'error-box'
-        flash.message = message
-        render(view: 'editAccountSettings')
     }
 }
 
