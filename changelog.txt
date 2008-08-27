@@ -1,3 +1,7 @@
+== Changes in version 1.0.6
+
+* Fixed front page layout problem which showed up in Safari 3
+
 == Changes in version 1.0.5
 
 * Added Atom feed for project comments
