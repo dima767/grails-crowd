@@ -3,21 +3,11 @@ This project requires the following plugins which are not checked in into VCS:
 - Modalbox plugin
 - RichUI plugin
 - Feeds plugin
-- Avatar plugin (0.1 currently)
+- Avatar plugin
 
 After fresh checkout from VCS, run the following commands to install the above mentioned plugins:
 
 'grails upgrade'
 'grails install-plugin modalbox'
 'grails install-plugin richui'
-'grails install-plugin http://avatargrailsplugin.googlecode.com/files/grails-avatar-plugin-0.1.zip'
-
-=== Modalbox plugin notes
-If the current installed version of Modalbox plugin is 0.2, after installing it, replace the  ModalboxTagLib.groovy with the modified version from src/etc, as the original 0.2 version of this taglib has few bugs:
-
-'cp src/etc/ModalboxTagLib.groovy plugins/modalbox-0.2/grails-app/taglib/'
-
-=== Avatar plugin notes
-If the current installed version of Avatar plugin is 0.1, after installing it, replace the AvatarTagLib.groovy with the modified version from src/etc, as the original 0.1 version of this taglib lacks some features which Grails Crowd uses
-
-'cp src/etc/AvatarTagLib.groovy plugins/avatar-plugin-0.1/grails-app/taglib/' 
+'grails install-plugin http://avatargrailsplugin.googlecode.com/files/grails-avatar-plugin-0.1.zip' 
