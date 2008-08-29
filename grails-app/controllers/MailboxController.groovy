@@ -11,8 +11,21 @@ class MailboxController extends SecureController {
     }
 
     def showMessage = {
-        def msg = freshCurrentlyLoggedInMember().mailbox.markMessageAsSeen(params.id.toLong())
-        renderMessageViewOrGoToMailbox(msg)
+        def msgId = 0
+		try {
+			msgId = params.id.toLong()
+		}
+		catch(NumberFormatException) {
+			redirect(uri: '/notAllowed')
+		}
+		
+		def msg = freshCurrentlyLoggedInMember().mailbox.getMessage(msgId)
+        if(!(msg?.isArchived() || msg?.isAcknowleged())) {
+			renderMessageViewOrGoToMailbox(msg)
+		}
+		else {
+			renderMessageViewOrGoToMailbox(null)
+		}
     }
 
     def archiveMessage = {
@@ -23,6 +36,7 @@ class MailboxController extends SecureController {
     private renderMessageViewOrGoToMailbox(msg) {        
         if (msg) {
             render(view: 'message', model: [message: msg])
+			return;
         }
         else {
             redirect(controller:'mailbox')

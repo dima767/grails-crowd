@@ -26,6 +26,10 @@
     <div class="content">
 
         <div class="main">
+			
+			<g:render template="/shared/messagesRenderer"/>
+
+            <br />
 
             <div class="description-box">
                 <span class="content-font">

@@ -18,7 +18,10 @@ class ProjectParticipationController extends SecureController {
         def project = GrailsProject.get(params['project.id'])
         def projectCreator = freshCurrentlyLoggedInMember()
         project.inviteParticipant(projectCreator, invitee)
-        redirect(controller: 'member', action: 'viewProfile', params: [_name: invitee.name])
+		flash.messageClass = 'info-box'
+        flash.message = """Project participation invitation has been submitted.
+                           A reply from the member you are inviting should appear in your inbox."""
+        render(view: '/member/viewProfile', model: [member: invitee])
     }
 
     def acceptParticipationInvitation = {
@@ -44,7 +47,7 @@ class ProjectParticipationController extends SecureController {
         project.requestParticipation(requestor)
         flash.messageClass = 'info-box'
         flash.message = """Project participation request has been submitted.
-                           A reply from the project creator should appear in your Inbox."""
+                           A reply from the project creator should appear in your inbox."""
         render(view: '/grailsProject/viewProject', model: [grailsProject: project])
     }
 
