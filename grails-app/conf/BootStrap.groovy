@@ -5,13 +5,13 @@ class BootStrap {
     ProjectService projectService
 
     def init = {servletContext ->
-        //Here just for testing on the initial stages of development
-        /*for (i in 1..20) {
+        //Just for testing
+        /*for (i in 1..500) {
             new Member(name: "name$i", email: "name$i@gmail.com", password: "passwd$i", displayName: "Name $i",
-            mailbox: new Mailbox()).save(flush: true)
+            about: "hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo", mailbox: new Mailbox()).save(flush: true)
         }
-        def creatorMember = Member.findByName("name1");
-        def project = projectService.createProject(uri: 'http://grailscrowd.com',
+        def creatorMember = Member.findByName("name1")		        
+		def project = projectService.createProject(uri: 'http://grailscrowd.com',
                 name: 'GrailsCrowd',
                 description: 'Test app',
                 primaryLocation: 'USA',

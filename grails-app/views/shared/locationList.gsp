@@ -21,13 +21,13 @@
                     <hr />
                 </g:each>
             </span>
-
-            <br />
-            <g:render template="/shared/paginator" model="[controller:paginatingController,
-                      action:paginatingAction, total:total]"/>
-         </div>
+         
+		</div>
 
     </div>
+	
+	<br />
+    <g:render template="/shared/paginator" model="[controller:paginatingController, action:paginatingAction, total:total]"/>
 
 </body>
 </html>

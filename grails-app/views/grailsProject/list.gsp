@@ -22,14 +22,13 @@
                 </g:each>
             </span>
 
-            <br />            
-            <g:if test="${paginatingController && paginatingAction}">
-                <g:render template="/shared/paginator" model="[controller:paginatingController,
-                      action:paginatingAction, total:total]"/>
-            </g:if>
-         </div>
-
+         </div>
     </div>
+
+	<br />            
+    <g:if test="${paginatingController && paginatingAction}">
+    	<g:render template="/shared/paginator" model="[controller:paginatingController, action:paginatingAction, total:total]"/>
+    </g:if>
 
 </body>
 </html>
