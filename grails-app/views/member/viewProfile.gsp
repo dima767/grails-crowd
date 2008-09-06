@@ -72,31 +72,37 @@
                             <br />
                         </g:if>
                         <g:if test="${member.linkedInProfileUri}">
-                            <label>LinkedIn profile:</label> <a href="${member.linkedInProfileUri}" target="_blank">${member.linkedInProfileUri}</a>
+                            <img src="${createLinkTo(dir:'images',file:'linkedin.png')}" alt="LinkedIn"/>
+							<label>LinkedIn profile:</label> <a href="${member.linkedInProfileUri}" target="_blank">${member.linkedInProfileUri}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.twitterProfileUri}">
-                            <label>Twitter profile:</label> <a href="${member.twitterProfileUri}" target="_blank">${member.twitterProfileUri}</a>
+                            <img src="${createLinkTo(dir:'images',file:'twitter.png')}" alt="Twitter"/>
+							<label>Twitter profile:</label> <a href="${member.twitterProfileUri}" target="_blank">${member.twitterProfileUri}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.friendFeedProfileUri}">
-                            <label>FriendFeed profile:</label> <a href="${member.friendFeedProfileUri}" target="_blank">${member.friendFeedProfileUri}</a>
+                            <img src="${createLinkTo(dir:'images',file:'friendfeed.png')}" alt="FF"/>
+							<label>FriendFeed profile:</label> <a href="${member.friendFeedProfileUri}" target="_blank">${member.friendFeedProfileUri}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.flickrProfileUri}">
-                            <label>Flickr photos:</label> <a href="${member.flickrProfileUri}" target="_blank">${member.flickrProfileUri}</a>
+                            <img src="${createLinkTo(dir:'images',file:'flickr.png')}" alt="Flickr"/>
+							<label>Flickr photos:</label> <a href="${member.flickrProfileUri}" target="_blank">${member.flickrProfileUri}</a>
                             <br />
                             <br />
                         </g:if>
 						<g:if test="${member.deliciousProfileUri}">
+							<img src="${createLinkTo(dir:'images',file:'delicious.png')}" alt="Delicious"/>
                             <label>Delicious bookmarks:</label> <a href="${member.deliciousProfileUri}" target="_blank">${member.deliciousProfileUri}</a>
                             <br />
                             <br />
                         </g:if>
 						<g:if test="${member.ohlohProfileUri}">
+							<img src="${createLinkTo(dir:'images',file:'ohloh.png')}" alt="Ohloh"/>
                             <label>Ohloh profile:</label> <a href="${member.ohlohProfileUri}" target="_blank">${member.ohlohProfileUri}</a>
                             <br />
                             <br />
