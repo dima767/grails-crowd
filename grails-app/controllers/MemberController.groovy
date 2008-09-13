@@ -122,6 +122,29 @@ class MemberController extends SecureController {
                 menuContext: [header: 'Your project colleagues']])
     }
 
+	/**Atom feed of newest members */
+	def newestFeed = {
+        def newestMembers = Member.findAllByJoinedOnBetween(new Date() - 1, new Date(), [max:5, sort:"joinedOn", order:"desc"])
+
+        render(feedType: "atom") {
+            title = "Grails Crowd newest members"
+            description = "Newest members registered with Grails Crowd"
+            link = createLink(controller: "member", action: "newestFeed")
+
+            newestMembers.each() {member ->
+                entry {
+					title = "Member ${member.displayName} has registered on ${g.niceDate(date:member.joinedOn)}"                   
+					link = createLink(controller: "member", action: "viewProfile", params: [_name:member.name])
+                    author = member.displayName
+                    publishedDate = member.joinedOn
+					content {
+                        member.about
+                    }
+                }
+            }
+        }
+    }
+
     private def withMemberIds(callable) {
         def memberIds = session.memberIds
         if (!memberIds) {

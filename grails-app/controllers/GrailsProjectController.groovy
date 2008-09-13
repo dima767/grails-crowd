@@ -191,7 +191,6 @@ class GrailsProjectController extends SecureController {
     }
 
     def commentsFeed = {
-
         def grailsProject = GrailsProject.get(params.id)
 
         render(feedType: "atom") {
@@ -201,7 +200,7 @@ class GrailsProjectController extends SecureController {
 
             grailsProject.comments.each() {comment ->
                 entry {
-					title = "New comment from Grails Crowd member ${comment.member.displayName} made on ${comment.dateCreated}"                   
+					title = "New comment from Grails Crowd member ${comment.member.displayName} made on ${g.niceDate(date:comment.dateCreated)}"                   
 					link = createLink(controller: "grailsProject", action: "viewProject", id: grailsProject.id)
                     author = comment.member.displayName
                     publishedDate = comment.dateCreated

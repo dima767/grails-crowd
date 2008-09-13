@@ -25,9 +25,7 @@ class UrlMappings {
         //For some reason $name just wouldn't work, so had to use $_name
         "/members/$_name"(controller: 'member', action: 'viewProfile')
 
-        "/members/discovered"(controller: 'member', action: 'findRandom')
-
-        "/members/7days"(controller: 'member', action: 'findLastSevenDays')
+        "/members/discovered"(controller: 'member', action: 'findRandom')     
 
         "/members/locations"(controller: 'member', action: 'listMemberLocations')
 
@@ -40,6 +38,8 @@ class UrlMappings {
         "/members/current/projects/participatingIn"(controller: 'member', action: 'participatingInProjects')
 
         "/members/current/colleagues"(controller: 'member', action: 'colleagues')
+
+		"/members/newest/feed/atom"(controller: 'member', action: 'newestFeed')
 
         //********** PROFILE *******************************************/
         "/profile/current/updatable"(controller: "member", action: "editProfile") //GET form representation
