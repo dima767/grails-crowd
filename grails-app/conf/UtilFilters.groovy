@@ -11,8 +11,8 @@ class UtilFilters {
             }
         }
 
-        setupCommonQueryParams(controller: "(member|grailsProject)",
-                action: "(listProjectLocations|listMemberLocations|findByName|findByLocation|findByTagGlobally|findByTagForMember)") {
+        setupCommonQueryParams(controller: "(member|grailsProject|comment)",
+                action: "(listProjectLocations|listMemberLocations|findByName|findByLocation|findByTagGlobally|findByTagForMember|list)") {
             before = {
                 if (actionName == 'listProjectLocations' || actionName == 'listMemberLocations') {
                     configureDefaultMaxResults(params)
@@ -30,7 +30,7 @@ class UtilFilters {
 						return false
                     }
                 }
-                if (actionName == 'findByName' || actionName == 'findByTagGlobally' || actionName == 'findByTagForMember') {
+                if (actionName == 'findByName' || actionName == 'findByTagGlobally' || actionName == 'findByTagForMember' || actionName == 'list') {
                     configureDefaultMaxResults(params)
                 }
             }
