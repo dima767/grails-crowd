@@ -46,9 +46,12 @@ class NiceDateTagLib {
 
 
 	def niceDate = { attrs, body ->
-
         def date = attrs.date
         def sdf = new java.text.SimpleDateFormat("EEE, d MMM yyyy")
         out << sdf.format(date)
+	}
+	
+	def niceAgoDate = { attrs, body ->
+        out << getNiceDate(attrs.date)
 	}
 }

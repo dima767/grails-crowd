@@ -70,7 +70,7 @@
 		<g:each var="comment" in="${latestComments}">               
             	<div class="comments-box">
 					<span class="meta-info">
-						<g:link class="inline-link" controller="member" action="viewProfile" params="[_name:comment.member.name]">${comment.member.displayName}</g:link> on <g:niceDate date="${comment.dateCreated}" />, for project <g:link class="inline-link" controller="grailsProject" action="viewProject" id="${comment.project.id}">${comment.project.name}</g:link>
+						<g:link class="inline-link" controller="member" action="viewProfile" params="[_name:comment.member.name]">${comment.member.displayName}</g:link> for project <g:link class="inline-link" controller="grailsProject" action="viewProject" id="${comment.project.id}">${comment.project.name}</g:link>, <g:niceAgoDate date="${comment.dateCreated}" />
 					</span>
 					<br/>
 					<br/>
