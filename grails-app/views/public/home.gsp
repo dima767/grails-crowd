@@ -29,11 +29,11 @@
 			
 			<div class="public-home-content-left">	
 		
-				<g:if test="${newestMembers}">				
+				<g:if test="${latestMembers}">				
 					<h4 class="page-section-header">Latest members <g:link controller="member" action="latestFeed"><img title="Sibscribe to the latest members feed" border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link></h4>
                 
                     	<span class="content-font">
-                     	       <g:each in="${newestMembers}" var="member">
+                     	       <g:each in="${latestMembers}" var="member">
                     				<avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-50.png'.encodeAsURL()}" size="50"/> <g:link controller="member" action="viewProfile" params="[_name:member.name]">${member.displayName}</g:link>
 									<g:if test="${member.location}">	
 										<span class="meta-info"> - ${member.location}</span>
@@ -47,11 +47,11 @@
 
 			<div class="public-home-content-right">
 				
-				<g:if test="${newestProjects}">				
+				<g:if test="${latestProjects}">				
 					<h4 class="page-section-header">Latest projects <g:link controller="grailsProject" action="latestFeed"><img title="Sibscribe to the latest projects feed" border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link></h4>
                 
                     	<span class="content-font">
-                     			<g:each in="${newestProjects}" var="project">
+                     			<g:each in="${latestProjects}" var="project">
                     				<g:link controller="grailsProject" action="viewProject" id="${project.id}">${project.name}</g:link>
 									<g:if test="${project.primaryLocation}">	
 										<span class="meta-info"> - ${project.primaryLocation}</span>
@@ -64,6 +64,21 @@
 			</div>
 		
 		</div>
+		
+		<h4 class="page-section-header">Latest comments <g:link controller="comment" action="feed"><img title="Sibscribe to the comments feed" border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link></h4>
+		
+		<g:each var="comment" in="${latestComments}">               
+            	<div class="comments-box">
+					<span class="meta-info">
+						<g:link class="inline-link" controller="member" action="viewProfile" params="[_name:comment.member.name]">${comment.member.displayName}</g:link> on <g:niceDate date="${comment.dateCreated}" />, for project <g:link class="inline-link" controller="grailsProject" action="viewProject" id="${comment.project.id}">${comment.project.name}</g:link>
+					</span>
+					<br/>
+					<br/>
+                    <span class="content-font">${comment.body.encodeAsTextile()}</span>
+                </div>
+				<br/>
+        </g:each>
+		<g:link class="inline-link" controller="comment" action="list">&raquo; view all comments</g:link>
 
 		<div id="footer">            
             <a class="inline-link" href="http://twitter.com/grailscrowd" target="_blank">Follow on Twitter</a> | <a class="inline-link" href="http://getsatisfaction.com/grailscrowd" target="_blank">Report a problem or make a suggestion </a> | <a class="inline-link" href="http://grails.org" target="_blank">Developed with Grails</a> | <a class="inline-link" href="http://github.com/dima767/grails-crowd/tree/master" target="_blank">The code for this site is open source</a>

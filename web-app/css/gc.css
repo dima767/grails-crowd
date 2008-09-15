@@ -178,7 +178,7 @@
 
     li p {margin:0; color:#000;}
 
-    a.inline-link:link, a.inline-link:visited {color:#36c; background-color:#fff; text-decoration: none;}
+    a.inline-link:link, a.inline-link:visited {color:#36c; text-decoration: none;}
     a.inline-link:hover, a.step:hover, a.prevLink:hover, a.nextLink:hover { color: #FFFFFF;
                                                                             text-decoration: none;
                                                                             background: #0063DC; }

@@ -3,8 +3,9 @@ import grailscrowd.core.*
 class MemberController extends SecureController {
 
     def allowedMethods = [registrationForm: 'GET', handleRegistration: 'POST',
-            findLastSevenDays: 'GET', findRandom: 'GET',
-            editProfile: 'GET', saveProfile: 'POST', updateProfile: 'POST', viewProfile: 'GET']
+            findRandom: 'GET',
+            editProfile: 'GET', saveProfile: 'POST', updateProfile: 'POST', viewProfile: 'GET',
+			listMemberLocations: 'GET', latestFeed: 'GET']
 
     def beforeInterceptor = [action: this.&auth, only: ['editProfile', 'saveProfile', 'updateProfile']]
 
@@ -40,12 +41,6 @@ class MemberController extends SecureController {
         }
         render(view: 'editProfile', model: [member: member])
     }
-
-    def findLastSevenDays = {
-        def members = Member.findAllByJoinedOnBetween(new Date() - 7, new Date(), [max:5, sort:"joinedOn", order:"desc"])
-        render(view: 'last7Days', model: [members: members])
-    }
-
 
     def findRandom = {
         def member = null

@@ -10,10 +10,11 @@ class HomeRouterController extends SecureController {
             return
         }
         else {
-			//5 (at the most) newest members and projects registered within the last 7 days			
-			def newestMembers = Member.findAllByJoinedOnBetween(new Date() - 1, new Date(), [max:5, sort:"joinedOn", order:"desc"])            
-			def newestProjects = GrailsProject.findAllByDateCreatedBetween(new Date() - 1, new Date(), [max:5, sort:"dateCreated", order:"desc"])
-			render(view: '/public/home', model: [newestMembers: newestMembers, newestProjects: newestProjects])
+			//5 (at the most) latest members, projects registered within the last 2 days			
+			def latestMembers = Member.findAllByJoinedOnBetween(new Date() - 1, new Date(), [max:5, sort:"joinedOn", order:"desc"])            
+			def latestProjects = GrailsProject.findAllByDateCreatedBetween(new Date() - 1, new Date(), [max:5, sort:"dateCreated", order:"desc"])
+			def latestComments = Comment.listOrderByDateCreated(max:5, order:"desc")
+			render(view: '/public/home', model: [latestMembers: latestMembers, latestProjects: latestProjects, latestComments: latestComments])
 		}
     }
 }
