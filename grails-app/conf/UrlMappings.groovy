@@ -39,7 +39,7 @@ class UrlMappings {
 
         "/members/current/colleagues"(controller: 'member', action: 'colleagues')
 
-		"/members/newest/feed/atom"(controller: 'member', action: 'newestFeed')
+		"/members/latest/feed/atom"(controller: 'member', action: 'latestFeed')
 
         //********** PROFILE *******************************************/
         "/profile/current/updatable"(controller: "member", action: "editProfile") //GET form representation
@@ -94,6 +94,8 @@ class UrlMappings {
         "/projects/$id/updatable"(controller: 'grailsProject', action: 'editProject') //GET form representation
 
         "/projects/updatable/$id"(controller: 'grailsProject', action: 'updateProject') //POST
+
+		"/projects/latest/feed/atom"(controller: 'grailsProject', action: 'latestFeed')
 
         //********* COMMENTS **********************************************************/        
         "/projects/$id/comments/feed/atom"(controller: 'grailsProject', action: 'commentsFeed') //GET

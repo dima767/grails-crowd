@@ -30,7 +30,7 @@
 			<div class="public-home-content-left">	
 		
 				<g:if test="${newestMembers}">				
-					<h4 class="page-section-header">Newest members<div style="text-align: right;">Atom feed <g:link controller="member" action="newestFeed"><img border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link></h4>
+					<h4 class="page-section-header">Latest members <g:link controller="member" action="latestFeed"><img title="Sibscribe to the latest members feed" border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link></h4>
                 
                     	<span class="content-font">
                      	       <g:each in="${newestMembers}" var="member">
@@ -48,7 +48,7 @@
 			<div class="public-home-content-right">
 				
 				<g:if test="${newestProjects}">				
-					<h4 class="page-section-header">Newest projects</h4>
+					<h4 class="page-section-header">Latest projects <g:link controller="grailsProject" action="latestFeed"><img title="Sibscribe to the latest projects feed" border="0" src="${createLinkTo(dir:'images', file:'feed.png')}" alt="Atom Feed"  /></g:link></h4>
                 
                     	<span class="content-font">
                      			<g:each in="${newestProjects}" var="project">

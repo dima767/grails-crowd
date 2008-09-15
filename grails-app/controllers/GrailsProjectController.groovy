@@ -212,6 +212,29 @@ class GrailsProjectController extends SecureController {
         }
     }
 
+	/**Atom feed of the latest projects */
+	def latestFeed = {
+        def latestProjects = GrailsProject.findAllByDateCreatedBetween(new Date() - 1, new Date(), [max:5, sort:"dateCreated", order:"desc"])
+
+        render(feedType: "atom") {
+            title = "Grails Crowd latest projects"
+            description = "Latest projects registered with Grails Crowd"
+            link = createLink(controller: "grailsProject", action: "latestFeed")
+
+            latestProjects.each() {project ->
+                entry {
+					title = "Grails project ${project.name} has been registered on ${g.niceDate(date:project.dateCreated)}"                   
+					link = createLink(controller: "grailsProject", action: "viewProject", id: project.id)
+                    author = project.creator.displayName
+                    publishedDate = project.dateCreated
+					content {
+                        project.description?.encodeAsTextile()
+                    }
+                }
+            }
+        }
+    }
+
     private def withTag(callable) {
         if (!params.selectedTag) {
             redirect(uri: '/notAllowed')
