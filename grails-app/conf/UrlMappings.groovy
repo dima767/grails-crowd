@@ -103,6 +103,8 @@ class UrlMappings {
         "/projects/$id/comments"(controller: 'grailsProject', action: 'postComment') //POST
 
 		"/comments"(controller: 'comment', action: 'list') //GET
+		
+		"/comments/feed/atom"(controller: 'comment', action: 'feed') //GET
 
         //********* PROJECT PARTICIPATION **********************************************************/
         "/projects/current/participations"(controller: 'projectParticipation', action: 'index') //POST
