@@ -3,6 +3,7 @@
 <head>
     <title>Comments timeline</title>
     <meta name="layout" content="grailscrowd" />
+	<feed:meta kind="atom" version="1.0" controller="comment" action="feed" />
 </head>
 
 
