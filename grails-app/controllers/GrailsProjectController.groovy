@@ -196,12 +196,12 @@ class GrailsProjectController extends SecureController {
         render(feedType: "atom") {
             title = "Grails Crowd project (${grailsProject.name}): comments"
             description = "Comments for ${grailsProject.name} project"
-            link = g.createLink(controller: "grailsProject", action: "commentsFeed", id: grailsProject.id, absolute: true)
+            link = "http://grailscrowd.com/projects/${grailsProject.id}/comments/feed/atom"
 
             grailsProject.comments.each() {comment ->
                 entry {
 					title = "New comment from Grails Crowd member ${comment.member.displayName} made on ${g.niceDate(date:comment.dateCreated)}"                   
-					link = g.createLink(controller: "grailsProject", action: "viewProject", id: grailsProject.id, absolute: true)
+					link = "http://grailscrowd.com/projects/${grailsProject.id}"
                     author = comment.member.displayName
                     publishedDate = comment.dateCreated
 					content {
@@ -219,12 +219,12 @@ class GrailsProjectController extends SecureController {
         render(feedType: "atom") {
             title = "Grails Crowd latest projects"
             description = "Latest projects registered with Grails Crowd"
-            link = g.createLink(controller: "grailsProject", action: "latestFeed", absolute: true)
+            link = "http://grailscrowd.com/projects/latest/feed/atom"
 
             latestProjects.each() {project ->
                 entry {
 					title = "Grails project ${project.name} has been registered on ${g.niceDate(date:project.dateCreated)}"                   
-					link = g.createLink(controller: "grailsProject", action: "viewProject", id: project.id, absolute: true)
+					link = "http://grailscrowd.com/projects/${project.id}"
                     author = project.creator.displayName
                     publishedDate = project.dateCreated
 					content {

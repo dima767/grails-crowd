@@ -124,12 +124,12 @@ class MemberController extends SecureController {
         render(feedType: "atom") {
             title = "Grails Crowd latest members"
             description = "Latest members registered with Grails Crowd"
-            link = g.createLink(controller: "member", action: "latestFeed", absolute: true)
+            link = "http://grailscrowd.com/members/latest/feed/atom"
 
             latestMembers.each() {member ->
                 entry {
 					title = "Member ${member.displayName} has registered on ${g.niceDate(date:member.joinedOn)}"                   
-					link = g.createLink(controller: "member", action: "viewProfile", params: [_name:member.name], absolute: true)
+					link = "http://grailscrowd.com/members/${member.name}"
                     author = member.displayName
                     publishedDate = member.joinedOn
 					content {
