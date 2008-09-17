@@ -1,3 +1,7 @@
+== Changes in version 1.0.10
+
+* Fixed feeds links - now correctly uses absolute URLs instead of relative ones
+
 == Changes in version 1.0.9
 
 * Removed textile rendering of a content element of an entry in every feed
