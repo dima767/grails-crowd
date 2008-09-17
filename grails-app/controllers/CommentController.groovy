@@ -24,7 +24,7 @@ class CommentController {
                     	author = comment.member.displayName
                     	publishedDate = comment.dateCreated
 						content {
-                        	comment.body?.encodeAsTextile()
+                        	comment.body
                     	}
                 	}
             	}

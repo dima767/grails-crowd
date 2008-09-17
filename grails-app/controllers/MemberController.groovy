@@ -133,7 +133,7 @@ class MemberController extends SecureController {
                     author = member.displayName
                     publishedDate = member.joinedOn
 					content {
-                        member.about?.encodeAsTextile()
+                        member.about
                     }
                 }
             }

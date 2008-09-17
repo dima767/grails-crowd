@@ -228,7 +228,7 @@ class GrailsProjectController extends SecureController {
                     author = project.creator.displayName
                     publishedDate = project.dateCreated
 					content {
-                        project.description?.encodeAsTextile()
+                        project.description
                     }
                 }
             }
