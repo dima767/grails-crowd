@@ -1,3 +1,15 @@
+== Changes in version 1.0.8
+
+* Fixed minor annoyances with comments Atom feed:
+    - Project name in the feed title is now in () instead of <> as GReader won't show it.
+    - Added proper 'publishedDate' to the entry element.
+* Added small icons for various public social networks such as flickr, twitter, linkedin, ohloh, delicious, friendfeed
+  	and display those on the member's profile page next to the link
+* Added atom feed for latest members
+* Added atom feed for latest projects
+* Changed link from 'Get satisfaction' to 'Lighthouse tracker' in the footer
+* Added comments timeline and corresponding atom feed
+
 == Changes in version 1.0.7
 
 * Now the mailbox behavior is stricter such that it's impossible to manually
