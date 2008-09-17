@@ -15,12 +15,12 @@ class CommentController {
         	render(feedType: "atom") {
             	title = "Grails Crowd project comments"
             	description = "Comments across all projects registered on Grails Crowd"
-            	link = createLink(controller: "comment", action: "feed", absolute: true)
+            	link = g.createLink(controller: "comment", action: "feed", absolute: true)
 
             	comments.each() {comment ->
                 	entry {
 						title = "A comment for project ${comment.project.name} has been submitted on ${g.niceDate(date:comment.dateCreated)}"                   
-						link = createLink(controller: "grailsProject", action: "viewProject", id: comment.project.id, absolute: true)
+						link = g.createLink(controller: "grailsProject", action: "viewProject", id: comment.project.id, absolute: true)
                     	author = comment.member.displayName
                     	publishedDate = comment.dateCreated
 						content {
