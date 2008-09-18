@@ -11,3 +11,4 @@ web-app/index.gsp
 .settings
 *.iws
 *.war
+*DB*
