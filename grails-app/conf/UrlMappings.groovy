@@ -134,6 +134,9 @@ class UrlMappings {
 
         "/mailbox/messages/archive"(controller: 'mailbox', action: 'archiveMessage') //POST
 
+		//********* SEARCH ******************************************************/
+		"/search"(controller: 'search', action = 'searchForMembersAndProjects') //GET
+
         //********* EXCEPTIONS ******************************************************/
         //Uncomment for production
         "500"(controller:"errors", action:"serverError")

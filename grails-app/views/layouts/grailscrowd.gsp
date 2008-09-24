@@ -31,12 +31,12 @@
             </g:else>
             </p>
 
-			<form id="search" controller="search" action="searchForMembersAndProjects" method="get">
+			<g:form name="search" controller="search" action="searchForMembersAndProjects" method="get">
 	            <div>
-	                <input type="text" name="q" value=""/>
-	                <input class="btn" type="image" name="search" alt="Search" value="Search" src="${createLinkTo(dir:'images',file:'search.gif')}"/>
+	                <input type="text" name="q" value=""/>                
+					<input class="btn" type="submit" style="{font-size:1.5em}" value="Search" />
 	            </div>
-	        </form>
+	        </g:form>
 
             <ul id="nav-main">
                 <li class="first"><g:link controller="homeRouter"><g:message code="header.nav.home" /></g:link></li>
