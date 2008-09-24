@@ -117,7 +117,7 @@
 
    /* site search */
       #search {position:relative; z-index:2; float:right; clear:right; margin:10px 10px -24px 0; *margin-top:15px;}
-      input.btn {padding:1.0; font-weight:bold; color:#333; vertical-align:middle; *position:relative; *top:-1px;}
+      input.btn {padding:1.0; color:#333; vertical-align:middle; *position:relative; *top:-1px; font-size:1.4em;}
 
    /* main navigation */
       #nav-main {clear:both; float:left; margin:0; *margin:18px 0 0; border-bottom:1px solid #ddd; padding:1px 0 0; width:980px;}

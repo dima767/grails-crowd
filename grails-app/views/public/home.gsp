@@ -23,7 +23,7 @@
 		<g:form name="search" controller="search" action="searchForMembersAndProjects" method="get">
             <div>
                 <input type="text" name="q" value=""/>                
-				<input class="btn" type="submit" style="{font-size:1.5em}" value="Search" />
+				<input class="btn" type="submit" value="Search" />
             </div>
         </g:form>
 
