@@ -12,6 +12,9 @@
         <g:render template="${navMenu}" model="${menuContext}"/>
     </div>
 
+	<br />
+	<g:render template="/shared/alphabet" />
+
     <div class="content">
 
         <div class="main">

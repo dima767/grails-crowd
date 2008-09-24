@@ -184,7 +184,7 @@
                                                                             background: #0063DC; }
 
     /* pagination */
-    .prevLink, .step, .currentStep, .nextLink { background:#FFFFFF none repeat scroll 0%;
+    .prevLink, .step, .nextLink, .currentStep { background:#FFFFFF none repeat scroll 0%;
                                                 border:2px solid #DDDDDD;
                                                 margin-left:10px;
                                                 padding:2px 6px;

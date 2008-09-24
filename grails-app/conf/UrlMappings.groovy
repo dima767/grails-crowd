@@ -136,6 +136,8 @@ class UrlMappings {
 
 		//********* SEARCH ******************************************************/
 		"/search"(controller: 'search', action = 'searchForMembersAndProjects') //GET
+		
+		"/members/byFirstLetter/$letter"(controller: 'search', action = 'searchForMembersByFirstLetter') //GET
 
         //********* EXCEPTIONS ******************************************************/
         //Uncomment for production
