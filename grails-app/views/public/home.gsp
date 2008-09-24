@@ -20,6 +20,13 @@
             <h3>Already registered? Then <g:link class="inline-link" controller="authentication"><g:message code="header.auth.signin" /></g:link></h3>
         </div>
 
+		<form id="search" controller="search" action="searchForMembersAndProjects" method="get">
+            <div>
+                <input type="text" name="q" value=""/>
+                <input class="btn" type="image" name="search" alt="Search" value="Search" src="${createLinkTo(dir:'images',file:'search.gif')}"/>
+            </div>
+        </form>
+
         <ul id="nav-main">
             <li class="first"><g:link controller="member" action="findByName">${grailscrowd.core.Member.count()} registered member(s)</g:link></li>
             <li><g:link controller="grailsProject" action="findByName">${grailscrowd.core.GrailsProject.count()} registered project(s)</g:link></li>                    

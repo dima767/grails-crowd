@@ -31,13 +31,12 @@
             </g:else>
             </p>
 
-            <!-- Let's just get 1.0 out of the door. Then we could introduce search, etc., etc.
-            <form id="search" action="search.html">
-                <div>
-                    <input type="text" value=""/>
-                    <input class="btn" type="image" name="search" alt="Search" value="Search" src="${createLinkTo(dir:'images',file:'search.gif')}"/>
-                </div>
-            </form> -->
+			<form id="search" controller="search" action="searchForMembersAndProjects" method="get">
+	            <div>
+	                <input type="text" name="q" value=""/>
+	                <input class="btn" type="image" name="search" alt="Search" value="Search" src="${createLinkTo(dir:'images',file:'search.gif')}"/>
+	            </div>
+	        </form>
 
             <ul id="nav-main">
                 <li class="first"><g:link controller="homeRouter"><g:message code="header.nav.home" /></g:link></li>
@@ -45,7 +44,7 @@
                 <li><g:link controller="grailsProject" action="findRandom"><g:message code="header.nav.discover-projects" /></g:link></li>
                 <g:if test="${loggedInMember}">
                     <li><g:link controller="grailsProject" action="projectCreationForm">+ Create new project entry</g:link></li>
-                </g:if>    
+                </g:if>
             </ul>
 
         </div>

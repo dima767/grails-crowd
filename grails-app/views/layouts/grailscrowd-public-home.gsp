@@ -14,7 +14,6 @@
     <body>
 
     <div id="wrap">
-
         <!-- Layout Body -->
         <g:layoutBody/>
         <!-- End Layout Body -->
