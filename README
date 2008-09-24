@@ -8,6 +8,7 @@ This project requires the following plugins which are not checked in into VCS:
 After fresh checkout from VCS, run the following commands to install the above mentioned plugins:
 
 'grails upgrade'
+'grails install-plugin ffeds'
 'grails install-plugin modalbox'
 'grails install-plugin richui'
-'grails install-plugin http://avatargrailsplugin.googlecode.com/files/grails-avatar-plugin-0.1.zip' 
+'grails install-plugin avatar'
