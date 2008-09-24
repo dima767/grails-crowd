@@ -25,7 +25,7 @@
                             <p><label for="displayName">Display name:</label><br/> <input type="text" name="displayName" id="displayName"
                                     value="${member.displayName}"/>
 
-                            <p><label for="about">About me</label> (<a href="http://hobix.com/textile" target="_blank">Textile enabled</a>):<br/><textarea name="about" cols="53" rows="10"
+                            <p><label for="about">About me</label> (<a href="http://hobix.com/textile/quick.html" target="_blank">Textile enabled</a>):<br/><textarea name="about" cols="53" rows="10"
                                     id="about">${member.about}</textarea></p>
                         </div>
                         <br/>
@@ -143,7 +143,7 @@
 								'Other']}"
                                 noSelection="['null':'-Choose your affiliation with Grails-']"/></p>
 
-                        <p><label for="description">Description:</label> <br/> <textarea name="description"
+                        <p><label for="description">Description:</label> (<a href="http://hobix.com/textile/quick.html" target="_blank">Textile enabled</a>):<br/> <textarea name="description"
                                 id="description" cols="30" rows="8"></textarea></p>
 
                         <p><b style="color:green;">Add</b>&nbsp;<input class="btn" type="image" name="add" id="add" value="Add" src="${createLinkTo(dir:'images',file:'add.png')}"/></p>
