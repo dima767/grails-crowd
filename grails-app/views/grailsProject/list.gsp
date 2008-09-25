@@ -12,6 +12,9 @@
         <g:render template="${navMenu}" model="${menuContext}"/>
     </div>
 
+	<br />
+	<g:render template="/shared/alphabet" model="[searchAction:'searchForProjectsByFirstLetter']"/>
+
     <div class="content">
 
         <div class="main">
@@ -22,7 +25,8 @@
                 </g:each>
             </span>
 
-         </div>
+         </div>
+
     </div>
 
 	<br />            

@@ -12,6 +12,9 @@
         <h1>${locationListHeader}</h1>
     </div>
 
+	<br />
+	<g:render template="/shared/alphabet" model="[searchAction:'searchForLocationsByFirstLetter']"/>
+
     <div class="content">
 
         <div class="main">

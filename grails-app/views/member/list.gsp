@@ -13,7 +13,7 @@
     </div>
 
 	<br />
-	<g:render template="/shared/alphabet" />
+	<g:render template="/shared/alphabet" model="[searchAction:'searchForMembersByFirstLetter']"/>
 
     <div class="content">
 
