@@ -1,3 +1,9 @@
+== Changes in version 1.1
+
+* Made Grails affiliations details text 'textile-enabled'
+* Added alphabetical search links for members, projects, and locations
+* Added basic search for members and projects
+
 == Changes in version 1.0.10
 
 * Fixed feeds links - now correctly uses absolute URLs instead of relative ones
