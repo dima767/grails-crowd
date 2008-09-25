@@ -13,14 +13,14 @@
     </div>
 
 	<br />
-	<g:render template="/shared/alphabet" model="[searchAction:'searchForLocationsByFirstLetter']"/>
+	<g:render template="/shared/alphabet" model="[searchAction:'searchForLocationsByFirstLetter', pageHeader: locationListHeader]"/>
 
     <div class="content">
 
         <div class="main">
             <span class="content-font">
                 <g:each in="${locations}" var="location">
-                    <h4><g:link controller="${paginatingController}" action="findByLocation" params="[q:location]">${location}</g:link></h4>
+                	<h4><g:link controller="${targetController}" action="findByLocation" params="[q:location]">${location}</g:link></h4>		
                     <hr />
                 </g:each>
             </span>

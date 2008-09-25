@@ -58,7 +58,7 @@ class GrailsProjectController extends SecureController {
 
         render(view: '/shared/locationList', model: [locations: locations,
                 locationListHeader: 'Discover projects by location',
-                paginatingController: controllerName, paginatingAction: actionName, total: total])
+                paginatingController: controllerName, paginatingAction: actionName, targetController: controllerName, total: total])
     }
 
     def findByName = {
