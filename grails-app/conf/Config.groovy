@@ -43,7 +43,7 @@ grails {
 	}
 }
 
-grails.mail.default.from="noreply@grailscrowd.com"
+//grails.serverURL="http://grailscrowd.com"
 
 //GrailsCrowd related configuration
 gc {

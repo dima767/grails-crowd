@@ -22,6 +22,13 @@ class ProjectParticipationController extends SecureController {
         flash.message = """Project participation invitation has been submitted.
                            A reply from the member you are inviting should appear in your inbox."""
         render(view: '/member/viewProfile', model: [member: invitee])
+		
+		sendMail {
+		   to invitee.email
+		   subject "[Grails Crowd] project participation invitation"
+		   body "Grails Crowd member '$projectCreator.displayName' wants you to join project '$project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+		}
+
     }
 
     def acceptParticipationInvitation = {
