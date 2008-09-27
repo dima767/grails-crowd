@@ -51,6 +51,12 @@
                     <label for="canBeContactedViaEmail">Allow people to contact me via email:</label>
 					<g:checkBox name="canBeContactedViaEmail" id="canBeContactedViaEmail" value="${member?.canBeContactedViaEmail}" />					
                 </p>
+				
+				<p>
+                    <label for="canBeNotifiedViaEmail">Allow email notifications:</label>
+					<g:checkBox name="canBeNotifiedViaEmail" id="canBeNotifiedViaEmail" value="true" />					
+                </p>
+
                 <p><input class="btn" type="submit" name="signUp" id="signUp" value="Create an account &raquo"/></p>
             </g:form>
         </div>

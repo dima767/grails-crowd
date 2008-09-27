@@ -53,6 +53,10 @@
                                 <label for="canBeContactedViaEmail">Allow people to contact me via email:</label>
                                 <g:checkBox name="canBeContactedViaEmail" value="${loggedInMember.canBeContactedViaEmail}" />
                             </p>
+							<p>
+			                    <label for="canBeNotifiedViaEmail">Allow email notifications:</label>
+								<g:checkBox name="canBeNotifiedViaEmail" id="canBeNotifiedViaEmail" value="${loggedInMember.canBeNotifiedViaEmail}" />					
+			                </p>
                         </div>
                         <br />
                         <p><g:submitButton class="btn" name="save" value="Save changes" />

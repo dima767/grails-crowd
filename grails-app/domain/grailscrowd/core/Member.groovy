@@ -16,6 +16,7 @@ class Member extends NumberOfViewsTrackable implements Comparable {
     String companyUri
     Boolean availableForHire = false
     Boolean canBeContactedViaEmail = false
+	Boolean canBeNotifiedViaEmail = true
     Date joinedOn = new Date()
     String usingGrailsSinceMonth
     String usingGrailsSinceYear
