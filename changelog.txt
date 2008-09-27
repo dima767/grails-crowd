@@ -1,3 +1,7 @@
+== Changes in version 1.1.1
+
+* No paging for letter-based searches result lists
+
 == Changes in version 1.1
 
 * Made Grails affiliations details text 'textile-enabled'
