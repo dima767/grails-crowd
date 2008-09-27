@@ -30,7 +30,9 @@
     </div>
 	
 	<br />
-    <g:render template="/shared/paginator" model="[controller:paginatingController, action:paginatingAction, total:total]"/>
+    <g:if test="${paginatingController && paginatingAction}">
+    	<g:render template="/shared/paginator" model="[controller:paginatingController, action:paginatingAction, total:total]"/>
+    </g:if>
 
 </body>
 </html>

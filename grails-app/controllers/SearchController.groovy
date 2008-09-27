@@ -17,41 +17,37 @@ class SearchController {
 	
 	def searchForMembersByFirstLetter = {
 		def letter = params.letter
-		def total = Member.countByDisplayNameIlike("$letter%")
         def members = Member.findAllByDisplayNameIlike("$letter%", [sort: 'displayName'])
-        render(view: '/member/list', model: [members: members, navMenu: '/member/discoverNavigationByName', total: total, letter: letter])
+        render(view: '/member/list', model: [members: members, navMenu: '/member/discoverNavigationByName', letter: letter])
 		
 	}
 	
 	def searchForProjectsByFirstLetter = {
 		def letter = params.letter
-		def total = GrailsProject.countByNameIlike("$letter%")
         def projects = GrailsProject.findAllByNameIlike("$letter%", [sort: 'name'])
-        render(view: '/grailsProject/list', model: [projects: projects, navMenu: '/grailsProject/discoverNavigationByName', total: total, letter: letter])		
+        render(view: '/grailsProject/list', model: [projects: projects, navMenu: '/grailsProject/discoverNavigationByName', letter: letter])		
 	}
 	
 	def searchForLocationsByFirstLetter = {
 		def pageHeader = params.pageHeader
 		def letter = params.letter
 		if(pageHeader == 'Discover members by location') {
-			def total = Member.countByLocationIlike("$letter%")
 	    	def locations = Member.executeQuery("select distinct m.location \
 	                                                from grailscrowd.core.Member m \
 	                                                where m.location like '$letter%' \
 	                                                order by m.location", [:], params)
         	render(view: '/shared/locationList', model: [locations: locations,
-			   locationListHeader: pageHeader, targetController: 'member', total: total, letter: letter])
+			   locationListHeader: pageHeader, targetController: 'member', letter: letter])
 			return
 		}
 		else if(pageHeader == 'Discover projects by location') {
-			def total = GrailsProject.countByPrimaryLocationIlike("$letter%")
 	        def locations = GrailsProject.executeQuery("select distinct p.primaryLocation \
 	                                                from grailscrowd.core.GrailsProject p \
 	                                                where p.primaryLocation like '$letter%' \
 	                                                order by p.primaryLocation", [:], params)
 
 	        render(view: '/shared/locationList', model: [locations: locations,
-	                locationListHeader: pageHeader, targetController: 'grailsProject', total: total, letter: letter])
+	                locationListHeader: pageHeader, targetController: 'grailsProject', letter: letter])
 			return
 		}
 		else {
