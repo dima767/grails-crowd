@@ -43,6 +43,8 @@ grails {
 	}
 }
 
+grails.mail.default.from="noreply@grailscrowd.com"
+
 //GrailsCrowd related configuration
 gc {
     uri.signin='/signin'
