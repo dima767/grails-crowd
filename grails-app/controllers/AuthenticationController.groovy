@@ -15,6 +15,7 @@ class AuthenticationController extends ControllerSupport {
             def member = Member.findByNameAndPassword(params.name, params.password.encodeAsEncryptedPassword())
             if (member) {
                 session.memberId = member.id
+				member.lastLogin = new Date()
                 redirectToAppropriateControllerAndActionForLoggedInMember()
             }
             else {

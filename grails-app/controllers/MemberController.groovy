@@ -22,6 +22,7 @@ class MemberController extends SecureController {
         }
         if (member.save()) {
             session.memberId = member.id
+			member.lastLogin = member.joinedOn
             redirect(action: editProfile)
         }
         else {

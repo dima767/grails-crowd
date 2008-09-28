@@ -18,6 +18,7 @@ class Member extends NumberOfViewsTrackable implements Comparable {
     Boolean canBeContactedViaEmail = false
 	Boolean canBeNotifiedViaEmail = true
     Date joinedOn = new Date()
+	Date lastLogin
     String usingGrailsSinceMonth
     String usingGrailsSinceYear
     String linkedInProfileUri
@@ -52,6 +53,7 @@ class Member extends NumberOfViewsTrackable implements Comparable {
         friendFeedProfileName(nullable: true)
 		deliciousProfileName(nullable: true)
 		ohlohProfileName(nullable: true)
+		lastLogin(nullable: true)
     }
 
     static hasMany = [projectParticipations: ProjectParticipation, affiliations: GrailsAffiliation, comments: Comment,
