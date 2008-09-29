@@ -162,6 +162,10 @@ class Member extends NumberOfViewsTrackable implements Comparable {
         getProjectColleagues().size() > 0
     }
 
+	def getNumberOfTags() {
+		Tagging.tagCountsForMember(this).size()
+	}
+
     def hasSinceInfo() {
         this.usingGrailsSinceYear != null
     }

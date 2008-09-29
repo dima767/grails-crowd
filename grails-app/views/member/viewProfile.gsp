@@ -19,8 +19,8 @@
             <h1><avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-80.png'.encodeAsURL()}" size="80"/> Member: ${member.displayName}</h1>
         </g:else>
 		<span class="meta-info">Joined on <g:niceDate date="${member.joinedOn}" /></span>
-		<br />
-        &rarr; <g:link class="inline-link" controller="tag" action="cloudForMember" params="[_name:member.name]">Tags</g:link>
+		<hr />
+        &rarr; <g:link class="inline-link" controller="tag" action="cloudForMember" params="[_name:member.name]">Tags (${member.numberOfTags})</g:link>
     </div>
 
     <div class="content">
