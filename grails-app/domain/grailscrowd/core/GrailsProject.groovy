@@ -121,6 +121,10 @@ class GrailsProject extends NumberOfViewsTrackable implements Comparable {
         (this.uri != null) || (this.primaryLocation != null)
     }
 
+	def getUniqueMembersWhoPostedComments() {
+		this.comments.member.unique()
+	}
+
     def hasAnyActiveParticipants() {
         allActiveParticipants().size() > 0
     }

@@ -178,16 +178,27 @@ class GrailsProjectController extends SecureController {
     def postComment = {
         def grailsProject = GrailsProject.get(params.id)
         if (grailsProject) {
-            log.debug("Saving a comment for project $grailsProject.name [$grailsProject.name]")
-
             Comment comment = new Comment(params)
             comment.project = grailsProject
             comment.member = freshCurrentlyLoggedInMember()
             grailsProject.addToComments(comment)
-            grailsProject.save()
-            //log.debug("Any errors saving the project?: ${grailsProject.errors}")
+			//Only send email notification if posting a comment succeeded
+			if(grailsProject.save()) {	
+				def recipients = grailsProject.uniqueMembersWhoPostedComments.findAll { it.canBeNotifiedViaEmail }.collect { it.email }
+				recipients += grailsProject.creator.email
+				recipients -= comment.member.email
+				if(recipients) {
+					sendMail {     
+						bcc recipients as Object[]
+			   			subject "A new comment for project [${grailsProject.name}] has been posted"     
+			   			body "${comment.member.displayName} said:\n\n${comment.body}\n\nSee the comment in context: ${createLink(controller: 'grailsProject', action: 'viewProject', id: params.id, absolute: true)}"
+					}
+				}
+			}
+			redirect(action: 'viewProject', id: grailsProject.id)
+			return 
         }
-        redirect(action: 'viewProject', id: grailsProject.id)
+        redirect(uri: '/notAllowed')
     }
 
     def commentsFeed = {
