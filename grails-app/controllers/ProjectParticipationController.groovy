@@ -24,11 +24,17 @@ class ProjectParticipationController extends SecureController {
         render(view: '/member/viewProfile', model: [member: invitee])
 		
 		if(invitee.canBeNotifiedViaEmail) {
-			sendMail {
-		   		to invitee.email
-		   		subject "[Grails Crowd] project participation invitation"
-		   		body "Grails Crowd member '$projectCreator.displayName' wants you to join project '$project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+			try {
+				sendMail {
+		   			to invitee.email
+		   			subject "[Grails Crowd] project participation invitation"
+		   			body "Grails Crowd member '$projectCreator.displayName' wants you to join project '$project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+				}
 			}
+			catch (Exception e) {
+				log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
+			}
+				
 		}
     }
 
@@ -38,10 +44,15 @@ class ProjectParticipationController extends SecureController {
                     projectMap.inviteeOrRequestor, params.messageId.toLong())
 			
 			if(projectMap.creator.canBeNotifiedViaEmail) {
-				sendMail {
-					to projectMap.creator.email
-					subject "[Grails Crowd] project participation acceptance"
-					body "Grails Crowd member '$projectMap.inviteeOrRequestor.displayName' has joined project '$projectMap.project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+				try {
+					sendMail {
+						to projectMap.creator.email
+						subject "[Grails Crowd] project participation acceptance"
+						body "Grails Crowd member '$projectMap.inviteeOrRequestor.displayName' has joined project '$projectMap.project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+					}
+				}
+				catch (Exception e) {
+					log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
 				}
 			}
         }
@@ -53,10 +64,15 @@ class ProjectParticipationController extends SecureController {
                     projectMap.inviteeOrRequestor, params.messageId.toLong())
         	
 			if(projectMap.creator.canBeNotifiedViaEmail) {
-				sendMail {
-					to projectMap.creator.email
-					subject "[Grails Crowd] project participation rejection"
-					body "Grails Crowd member '$projectMap.inviteeOrRequestor.displayName' has rejected to join project '$projectMap.project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+				try {
+					sendMail {
+						to projectMap.creator.email
+						subject "[Grails Crowd] project participation rejection"
+						body "Grails Crowd member '$projectMap.inviteeOrRequestor.displayName' has rejected to join project '$projectMap.project.name'\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+					}
+				}
+				catch (Exception e) {
+					log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
 				}
 			}		
 		}
@@ -75,10 +91,15 @@ class ProjectParticipationController extends SecureController {
         render(view: '/grailsProject/viewProject', model: [grailsProject: project])
 		
 		if(project.creator.canBeNotifiedViaEmail) {
-			sendMail {
-				to project.creator.email
-				subject "[Grails Crowd] project participation request"
-				body "Grails Crowd member '$requestor.displayName' has requested to join project '$project.name' as a participant.\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+			try {
+				sendMail {
+					to project.creator.email
+					subject "[Grails Crowd] project participation request"
+					body "Grails Crowd member '$requestor.displayName' has requested to join project '$project.name' as a participant.\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+				}
+			}
+			catch (Exception e) {
+				log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
 			}
 		}
 
@@ -90,10 +111,15 @@ class ProjectParticipationController extends SecureController {
                     projectMap.inviteeOrRequestor, params.messageId.toLong())
 		
 			if(projectMap.inviteeOrRequestor.canBeNotifiedViaEmail) {
-				sendMail {
-					to projectMap.inviteeOrRequestor.email
-					subject "[Grails Crowd] project participation approval"
-					body "Grails Crowd member '$projectMap.creator.displayName' has approved your request to join project '$projectMap.project.name' as a participant.\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+				try {
+					sendMail {
+						to projectMap.inviteeOrRequestor.email
+						subject "[Grails Crowd] project participation approval"
+						body "Grails Crowd member '$projectMap.creator.displayName' has approved your request to join project '$projectMap.project.name' as a participant.\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+					}
+				}
+				catch (Exception e) {
+					log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
 				}
 			}
         }
@@ -105,10 +131,15 @@ class ProjectParticipationController extends SecureController {
                     projectMap.inviteeOrRequestor, params.messageId.toLong())
 			
 			if(projectMap.inviteeOrRequestor.canBeNotifiedViaEmail) {
-				sendMail {
-					to projectMap.inviteeOrRequestor.email
-					subject "[Grails Crowd] project participation disapproval"
-					body "Grails Crowd member '$projectMap.creator.displayName' has rejected your request to join project '$projectMap.project.name' as a participant.\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+				try {
+					sendMail {
+						to projectMap.inviteeOrRequestor.email
+						subject "[Grails Crowd] project participation disapproval"
+						body "Grails Crowd member '$projectMap.creator.displayName' has rejected your request to join project '$projectMap.project.name' as a participant.\n\nGo to your mailbox to see more details: ${createLink(controller: 'mailbox', action: 'index', absolute: true)}"
+					}
+				}
+				catch (Exception e) {
+					log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
 				}
 			}
         }

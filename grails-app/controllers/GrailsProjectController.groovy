@@ -188,10 +188,15 @@ class GrailsProjectController extends SecureController {
 				recipients += grailsProject.creator.email
 				recipients -= comment.member.email
 				if(recipients) {
-					sendMail {     
-						bcc recipients as Object[]
-			   			subject "A new comment for project [${grailsProject.name}] has been posted"     
-			   			body "${comment.member.displayName} said:\n\n${comment.body}\n\nSee the comment in context: ${createLink(controller: 'grailsProject', action: 'viewProject', id: params.id, absolute: true)}"
+					try {
+						sendMail {     
+							bcc recipients as Object[]
+			   				subject "A new comment for project [${grailsProject.name}] has been posted"     
+			   				body "${comment.member.displayName} said:\n\n${comment.body}\n\nSee the comment in context: ${createLink(controller: 'grailsProject', action: 'viewProject', id: params.id, absolute: true)}"
+						}
+					}
+					catch (Exception e) {
+						log.debug("Exception is caught during send mail [${e.getMessage()}] Continueing...")
 					}
 				}
 			}
