@@ -19,8 +19,12 @@ class MailboxController extends SecureController {
 			redirect(uri: '/notAllowed')
 		}
 		
-		def msg = freshCurrentlyLoggedInMember().mailbox.getMessage(msgId)
-        if(!(msg?.isArchived() || msg?.isAcknowleged())) {
+		def mailbox = freshCurrentlyLoggedInMember().mailbox
+		def msg = mailbox.getMessage(msgId)
+		if(!(msg?.isArchived() || msg?.isAcknowleged())) {
+			if(msg.isNew()) {
+				mailbox.markMessageAsSeen(msgId)
+			}
 			renderMessageViewOrGoToMailbox(msg)
 		}
 		else {
