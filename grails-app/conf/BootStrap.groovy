@@ -6,7 +6,7 @@ class BootStrap {
 
     def init = {servletContext ->
         //Just for testing
-        /*for (i in 1..500) {
+        for (i in 1..10) {
             new Member(name: "name$i", email: "name$i@gmail.com", password: "passwd$i", displayName: "Name $i",
             about: "hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo", mailbox: new Mailbox()).save(flush: true)
         }
@@ -26,7 +26,7 @@ class BootStrap {
                 primaryLocation: 'USA',
                 architectureDescription: 'Rich UI (Flex) based application with Grails backend. Has Atom feeds and number of plugins',
                 tagTokens: 'grails,flex,social network'.encodeAsUniqueList(),
-                creatorMember)*/
+                creatorMember)
     }
 
     def destroy = {

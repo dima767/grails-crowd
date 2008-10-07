@@ -43,7 +43,7 @@ grails {
 	}
 }
 
-grails.serverURL="http://grailscrowd.com"
+//grails.serverURL="http://grailscrowd.com"
 
 //GrailsCrowd related configuration
 gc {

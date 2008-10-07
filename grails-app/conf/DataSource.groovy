@@ -1,8 +1,8 @@
 dataSource {
     boolean pooling = true
     dbCreate = "update" // one of 'create', 'create-drop','update'
-    //url = "jdbc:hsqldb:mem:testDb"
-    url = "jdbc:hsqldb:file:grailscrowdDB;shutdown=true"
+    url = "jdbc:hsqldb:mem:testDb"
+//    url = "jdbc:hsqldb:file:grailscrowdDB;shutdown=true"
     driverClassName = "org.hsqldb.jdbcDriver"
     username = "sa"
     password = ""
@@ -17,6 +17,13 @@ hibernate {
 // environment specific settings
 environments {
     development {
+		dataSource {
+			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+			url = "jdbc:hsqldb:mem:devDB"
+		}
+	}
+
+    dimaDevelopment {
         dataSource {
             boolean pooling = true
             dbCreate = "update"
