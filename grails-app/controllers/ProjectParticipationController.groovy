@@ -12,10 +12,13 @@ class ProjectParticipationController extends SecureController {
 
     def invite = {
         def invitee = Member.get(params['invitee.id'])
-        if (params['project.id'] == 'null') {
-            redirect(controller: 'member', action: 'viewProfile', params: [_name: invitee.name])
+
+        long projectId =  !params['project.id'] || !(params['project.id'].isLong())?-1L:Long.valueOf(params['project.id'])
+        if (projectId<1) {
+            redirect(controller: 'member', action: 'viewProfile', params: [_name: invitee.name, ])
+            return
         }
-        def project = GrailsProject.get(params['project.id'])
+        def project = GrailsProject.get(projectId)
         def projectCreator = freshCurrentlyLoggedInMember()
         project.inviteParticipant(projectCreator, invitee)
 		flash.messageClass = 'info-box'
