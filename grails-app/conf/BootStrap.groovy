@@ -8,7 +8,7 @@ class BootStrap {
         //Just for testing
         for (i in 1..10) {
             new Member(name: "name$i", email: "name$i@gmail.com", password: "passwd$i", displayName: "Name $i",
-            about: "hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo", mailbox: new Mailbox()).save(flush: true)
+            about: "hello", mailbox: new Mailbox()).save(flush: true)
         }
         def creatorMember = Member.findByName("name1")		        
 		def project = projectService.createProject(uri: 'http://grailscrowd.com',
