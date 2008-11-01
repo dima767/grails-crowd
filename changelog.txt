@@ -1,3 +1,7 @@
+== Changes in version 1.2.3
+
+* Added 'sponosored' link to groovymag.com in the footer of main layouts
+
 == Changes in version 1.2
 
 * Added 'lastLogin' property to Member

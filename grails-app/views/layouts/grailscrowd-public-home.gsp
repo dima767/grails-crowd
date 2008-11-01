@@ -20,7 +20,10 @@
 
 		<div id="footer">            
             <a class="inline-link" href="http://twitter.com/grailscrowd" target="_blank">Follow on Twitter</a> | <a class="inline-link" href="http://gc.lighthouseapp.com/projects/15821-grails-crowd/overview" target="_blank">Report a problem or request a feature</a> | <a class="inline-link" href="http://grails.org" target="_blank">Developed with Grails</a> | <a class="inline-link" href="http://github.com/dima767/grails-crowd/tree/master" target="_blank">The code for this site is open source</a>
-        </div>
+        	<br />
+			<br />
+			Hosting provided by <span style="float:left;"><a href="http://groovymag.com/?gc" target="_blank"><img src="${createLink(base:'http://www.groovymag.com/images/hostedby.png')}" alt="Groovymag"/></a></span>
+		</div>
 
     </div>
 
