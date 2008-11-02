@@ -242,6 +242,6 @@
 
 /* FOOTER
    ------------------------------------------------------------------------------------------------------------------------------------------- */
-   #footer {font-size:11px; clear:both; margin-top:18px; border-top:1px solid #ddd; padding:18px 10px; width:940px;}
+   #footer {font-size:11px; clear:both; margin-top:18px; border-top:1px solid #ddd; padding:18px 10px; width:940px; height:90px;}
    #footer .clear {clear:both; border-top:1px solid #ddd;}
-   #footer img {float:right;}
+   #footer img {float:left;}
