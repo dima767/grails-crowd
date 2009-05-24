@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title><g:message code="project.view.dom.title" /> ${grailsProject.name}</title>
+    <title><g:message code="project.view.dom.title" /> ${grailsProject.name.encodeAsHTML()}</title>
 
     <meta name="layout" content="grailscrowd" />
     <feed:meta kind="atom" version="1.0" controller="grailsProject" action="commentsFeed" id="${grailsProject.id}"/>
@@ -11,7 +11,7 @@
 <body id="project">
 
     <div id="nav-context">
-        <h1><g:message code="project.view.title" /> ${grailsProject.name}</h1>
+        <h1><g:message code="project.view.title" /> ${grailsProject.name.encodeAsHTML()}</h1>
 		<span class="meta-info">Created on <g:niceDate date="${grailsProject.dateCreated}" /></span>
 		<br />
 
@@ -30,7 +30,7 @@
 
             <div class="description-box">
                 <span class="content-font">
-                    ${grailsProject.description.encodeAsTextile()}
+                    ${grailsProject.description.encodeAsHTML().encodeAsTextile()}
                 </span>
             </div>
 
@@ -38,7 +38,7 @@
                 <h4 class="page-section-header">Architecture description</h4>
                 <div class="transparent-box">
                     <span class="content-font">
-                        ${grailsProject.architectureDescription.encodeAsTextile()}
+                        ${grailsProject.architectureDescription.encodeAsHTML().encodeAsTextile()}
                     </span>
                 </div>
             </g:if>
@@ -49,7 +49,7 @@
                     <span class="content-font">
                         <g:if test="${grailsProject.uri}">
                             <label><g:message code="project.view.label.url" />:</label>
-                            <a href="${grailsProject.uri}" target="_blank">${grailsProject.uri}</a>
+                            <a href="${grailsProject.uri.encodeAsURL()}" target="_blank">${grailsProject.uri}</a>
                             <br />
                             <br />
                         </g:if>
@@ -74,7 +74,7 @@
 							</span>
 							<br/>
 							<br/>
-                            <span class="content-font">${comment.body.encodeAsTextile()}</span>
+                            <span class="content-font">${comment.body.encodeAsHTML().encodeAsTextile()}</span>
                         </div>
 						<br/>
                 </g:each>

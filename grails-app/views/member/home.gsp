@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>${loggedInMember.name} home</title>
+    <title>${loggedInMember.name.encodeAsHTML()} home</title>
 
     <meta name="layout" content="grailscrowd" />
 </head>
@@ -10,7 +10,7 @@
 <body id="member-home">
 
     <div id="nav-context">
-        <h1>Hi there, ${loggedInMember.displayName}</h1>
+        <h1>Hi there, ${loggedInMember.displayName.encodeAsHTML()}</h1>
     </div>
 
     <div class="content">

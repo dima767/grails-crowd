@@ -41,9 +41,9 @@
                 
                     	<span class="content-font">
                      	       <g:each in="${latestMembers}" var="member">
-                    				<avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-50.png'.encodeAsURL()}" size="50"/> <g:link controller="member" action="viewProfile" params="[_name:member.name]">${member.displayName}</g:link>
+                    				<avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-50.png'.encodeAsURL()}" size="50"/> <g:link controller="member" action="viewProfile" params="[_name:member.name]">${member.displayName.encodeAsHTML()}</g:link>
 									<g:if test="${member.location}">	
-										<span class="meta-info"> - ${member.location}</span>
+										<span class="meta-info"> - ${member.location.encodeAsHTML()}</span>
 									</g:if>
 									<hr />                    				
                 				</g:each>								                        
@@ -59,9 +59,9 @@
                 
                     	<span class="content-font">
                      			<g:each in="${latestProjects}" var="project">
-                    				<g:link controller="grailsProject" action="viewProject" id="${project.id}">${project.name}</g:link>
+                    				<g:link controller="grailsProject" action="viewProject" id="${project.id}">${project.name.encodeAsHTML()}</g:link>
 									<g:if test="${project.primaryLocation}">	
-										<span class="meta-info"> - ${project.primaryLocation}</span>
+										<span class="meta-info"> - ${project.primaryLocation.encodeAsHTML()}</span>
 									</g:if>
                     				<hr />
                 				</g:each>								                        
@@ -77,11 +77,11 @@
 		<g:each var="comment" in="${latestComments}">               
             	<div class="comments-box">
 					<span class="meta-info">
-						By <g:link class="inline-link" controller="member" action="viewProfile" params="[_name:comment.member.name]">${comment.member.displayName}</g:link> for project <g:link class="inline-link" controller="grailsProject" action="viewProject" id="${comment.project.id}">${comment.project.name}</g:link>, <g:niceAgoDate date="${comment.dateCreated}" />
+						By <g:link class="inline-link" controller="member" action="viewProfile" params="[_name:comment.member.name]">${comment.member.displayName.encodeAsHTML()}</g:link> for project <g:link class="inline-link" controller="grailsProject" action="viewProject" id="${comment.project.id}">${comment.project.name.encodeAsHTML()}</g:link>, <g:niceAgoDate date="${comment.dateCreated}" />
 					</span>
 					<br/>
 					<br/>
-                    <span class="content-font">${comment.body.encodeAsTextile()}</span>
+                    <span class="content-font">${comment.body.encodeAsHTML().encodeAsTextile()}</span>
                 </div>
 				<br/>
         </g:each>

@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
     <title>Edit profile: ${loggedInMember.name} /></title>
     <meta name="layout" content="grailscrowd" />
@@ -22,7 +23,7 @@
                     <g:form name="personal-info" method="post" controller="member" action="updateProfile">
                         <h4 class="page-section-header">Your personal info</h4>
                         <div id="personal-info-box" class="box">
-                            <p><label for="displayName">Display name:</label><br/> <input type="text" name="displayName" id="displayName"
+                            <p><label for="displayName">Display name:</label><br/> <input type="text" size="55" name="displayName" id="displayName"
                                     value="${member.displayName}"/>
 
                             <p><label for="about">About me</label> (<a href="http://hobix.com/textile/quick.html" target="_blank">Textile enabled</a>):<br/><textarea name="about" cols="53" rows="10"

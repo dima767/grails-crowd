@@ -21,7 +21,7 @@
 
             <p id="nav-meta">
             <g:if test="${loggedInMember}">
-                <g:message code="header.auth.welcome.signedin" /> <g:link controller="member" action="viewProfile" params="[_name:loggedInMember.name]">${loggedInMember.name}</g:link>
+                <g:message code="header.auth.welcome.signedin" /> <g:link controller="member" action="viewProfile" params="[_name:loggedInMember.name]">${loggedInMember.name.encodeAsHTML()}</g:link>
                 <span>|</span> <g:if test="${loggedInMember.mailbox.hasAnyNewMessages()}"><g:link style="background-color: #fff;" controller="mailbox"><img src="${createLinkTo(dir:'images',file:'inbox-new.gif')}" alt="Inbox"/></g:link><b>(${loggedInMember.mailbox.numberOfNewMessages} new)</b></g:if>
                 <g:else><g:link style="background-color: #fff;" controller="mailbox"><img src="${createLinkTo(dir:'images',file:'inbox-no-new.gif')}" alt="Inbox"/></g:link></g:else> 
                 <span>|</span> (<g:link controller="authentication" action="handleLogout"><g:message code="header.auth.signout" /></g:link>)

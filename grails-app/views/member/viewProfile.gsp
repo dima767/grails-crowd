@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>Member: ${member.name}</title>
+    <title>Member: ${member.name.encodeAsHTML()}</title>
 
     <meta name="layout" content="grailscrowd" />    
 </head>
@@ -12,13 +12,13 @@
     <div id="nav-context">
         <!-- TODO: encapsulate these type of checks in taglib? -->
         <g:if test="${loggedInMember?.id == member.id}">
-            <h1><avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-80.png'.encodeAsURL()}" size="80"/> ${member.name} / ${member.displayName}</h1>			
-            <h6>[ <g:link class="inline-link" controller="member" action="editProfile">edit profile</g:link> ] | [ <g:link class="inline-link" controller="account">edit account settings</g:link> ]</h6>
+            <h1><avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-80.png'.encodeAsURL()}" size="80"/> ${member.name.encodeAsHTML()} / ${member.displayName.encodeAsHTML()}</h1>			
+            <h6><span class="meta-info"><br/>Your profile has been viewed <strong>${member.numberOfPublicViews}</strong> time(s)</span> [ <g:link class="inline-link" controller="member" action="editProfile">edit profile</g:link> ] | [ <g:link class="inline-link" controller="account">edit account settings</g:link> ]</h6>
         </g:if>
         <g:else>
-            <h1><avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-80.png'.encodeAsURL()}" size="80"/> Member: ${member.displayName}</h1>
+            <h1><avatar:gravatar email="${member.email}" defaultGravatarUrl="${'http://grailscrowd.com/images/default-gravatar-80.png'.encodeAsURL()}" size="80"/> Member: ${member.displayName}</h1> 
         </g:else>
-		<span class="meta-info">Joined on <g:niceDate date="${member.joinedOn}" /></span>
+		<span class="meta-info">Joined on <g:niceDate date="${member.joinedOn}" />
 		<hr />
         &rarr; <g:link class="inline-link" controller="tag" action="cloudForMember" params="[_name:member.name]">Tags (${member.numberOfTags})</g:link>
     </div>
@@ -34,10 +34,10 @@
             <div class="description-box">
                 <span class="content-font">
                 <g:if test="${member.about}">
-                    ${member.about.encodeAsTextile()}
+                    ${member.about.encodeAsHTML().encodeAsTextile()}
                 </g:if>
                 <g:else>
-                    My name is <b>${member.displayName}</b> and I'm now a part of the friendly Grails community! I haven't had a chance to write a few words about myself yet. 
+                    My name is <b>${member.displayName.encodeAsHTML()}</b> and I'm now a part of the friendly Grails community! I haven't had a chance to write a few words about myself yet. 
                 </g:else>
                 </span>
             </div>
@@ -46,7 +46,7 @@
                 <h4 class="page-section-header">Hometown</h4>
                 <p class="transparent-box">
                     <span class="content-font">
-                        <label>I am originally from:</label> ${member.homeTown}
+                        <label>I am originally from:</label> ${member.homeTown.encodeAsHTML()}
                     </span>
                 </p>
             </g:if>
@@ -57,7 +57,7 @@
                     <span class="content-font">
                         <label>I currently live in:</label>
 						<g:link controller="member" action="findByLocation"
-                                    params="[q:member.location]">${member.location}</g:link>
+                                    params="[q:member.location]">${member.location.encodeAsHTML()}</g:link>
                     </span>
                 </p>
             </g:if>
@@ -67,43 +67,43 @@
                 <p class="transparent-box">
                     <span class="content-font">
                         <g:if test="${member.homePageUri}">
-                            <label>Personal web resource (Blog, home page, etc.):</label> <a href="${member.homePageUri}" target="_blank">${member.homePageUri}</a>
+                            <label>Personal web resource (Blog, home page, etc.):</label> <a href="${member.homePageUri.encodeAsURL()}" target="_blank">${member.homePageUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.linkedInProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'linkedin.png')}" alt="LinkedIn"/>
-							<label>LinkedIn profile:</label> <a href="${member.linkedInProfileUri}" target="_blank">${member.linkedInProfileUri}</a>
+							<label>LinkedIn profile:</label> <a href="${member.linkedInProfileUri.encodeAsURL()}" target="_blank">${member.linkedInProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.twitterProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'twitter.png')}" alt="Twitter"/>
-							<label>Twitter profile:</label> <a href="${member.twitterProfileUri}" target="_blank">${member.twitterProfileUri}</a>
+							<label>Twitter profile:</label> <a href="${member.twitterProfileUri.encodeAsURL()}" target="_blank">${member.twitterProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.friendFeedProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'friendfeed.png')}" alt="FF"/>
-							<label>FriendFeed profile:</label> <a href="${member.friendFeedProfileUri}" target="_blank">${member.friendFeedProfileUri}</a>
+							<label>FriendFeed profile:</label> <a href="${member.friendFeedProfileUri.encodeAsURL()}" target="_blank">${member.friendFeedProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.flickrProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'flickr.png')}" alt="Flickr"/>
-							<label>Flickr photos:</label> <a href="${member.flickrProfileUri}" target="_blank">${member.flickrProfileUri}</a>
+							<label>Flickr photos:</label> <a href="${member.flickrProfileUri.encodeAsURL()}" target="_blank">${member.flickrProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
 						<g:if test="${member.deliciousProfileUri}">
 							<img src="${createLinkTo(dir:'images',file:'delicious.png')}" alt="Delicious"/>
-                            <label>Delicious bookmarks:</label> <a href="${member.deliciousProfileUri}" target="_blank">${member.deliciousProfileUri}</a>
+                            <label>Delicious bookmarks:</label> <a href="${member.deliciousProfileUri.encodeAsURL()}" target="_blank">${member.deliciousProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
 						<g:if test="${member.ohlohProfileUri}">
 							<img src="${createLinkTo(dir:'images',file:'ohloh.png')}" alt="Ohloh"/>
-                            <label>Ohloh profile:</label> <a href="${member.ohlohProfileUri}" target="_blank">${member.ohlohProfileUri}</a>
+                            <label>Ohloh profile:</label> <a href="${member.ohlohProfileUri.encodeAsURL()}" target="_blank">${member.ohlohProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
@@ -116,22 +116,17 @@
                 <p class="transparent-box">
                     <span class="content-font">
                         <g:if test="${member.companyName}">
-                            <label>Company:</label> ${member.companyName}
+                            <label>Company:</label> ${member.companyName.encodeAsHTML()}
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.companyUri}">
-                            <label>Company URL:</label> <a href="${member.companyUri}" target="_blank">${member.companyUri}</a>
+                            <label>Company URL:</label> <a href="${member.companyUri.encodeAsURL()}" target="_blank">${member.companyUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.availableForHire}">
                             I am interested in various employment opportunities.
-                            <!-- <g:if test="${loggedInMember && loggedInMember.id != member.id}"><g:link class="inline-link" controller="mailbox" action="composeEmploymentOpportunity" forMember="${member.name}">[Contact me]</g:link></g:if>
-                            <g:else>
-                                <span class="invisible">${session.memberToBeContacted = member.name}</span>
-                                <g:link class="inline-link" controller="authentication">Sign in</g:link> so you could contact me directly.
-                            </g:else> -->
                         </g:if>
                     </span>
                 </p>
@@ -143,7 +138,7 @@
                 <br />
                 <p class="transparent-box">
                     <span class="content-font">
-                        You can contact me directly. My email address is: <b><a class="inline-link" href="mailto:${member.email}">${member.email}</a></b>
+                        You can contact me directly. My email address is: <b><a class="inline-link" href="mailto:${member.email.encodeAsURL()}">${member.email.encodeAsHTML()}</a></b>
                     </span>
                 </p>
             </g:if>
@@ -214,11 +209,6 @@
                         <p><input class="btn" type="submit" name="invite" id="invite" value="Invite"/></p>
                 </g:form>
              </g:if>
-			 
-				<g:if test="${loggedInMember?.id == member.id}">                
-					<hr />					
-					<span class="meta-info">Your profile has been viewed <strong>${member.numberOfPublicViews}</strong> time(s)</span>
-				</g:if>
 
         </div> <!-- sub -->
 

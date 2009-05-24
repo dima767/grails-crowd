@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>Mailbox: ${loggedInMember.name}</title>
+    <title>Mailbox: ${loggedInMember.name.encodeAsHTML()}</title>
     <meta name="layout" content="grailscrowd" />
 </head>
 
@@ -27,7 +27,7 @@
                             <tr>
                         </g:else>
                             <td>
-                                ${message.subject}
+                                ${message.subject.encodeAsHTML()}
                             </td>
                             <td>
                                 <g:link class="inline-link" controller="mailbox" action="showMessage" params="[id:message.id]">details...</g:link>    

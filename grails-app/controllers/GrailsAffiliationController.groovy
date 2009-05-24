@@ -30,7 +30,7 @@ class GrailsAffiliationController extends SecureController {
     def details = {
         def affiliation = GrailsAffiliation.get(params.id)                
 		if (affiliation.description.trim()) {		
-			render """<div class="description-box">${affiliation.description.encodeAsTextile()}</div><br/>"""
+			render """<div class="description-box">${affiliation.description.encodeAsHTML()}</div><br/>"""
 		}
 		else {
 			render 'No details available<br/>'

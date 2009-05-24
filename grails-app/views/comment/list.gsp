@@ -25,7 +25,7 @@
 						</span>
 						<br/>
 						<br/>
-	                    <span class="content-font">${comment.body.encodeAsTextile()}</span>
+	                    <span class="content-font">${comment.body.encodeAsHTML().encodeAsTextile()}</span>
 	                </div>
 					<br/>
                 </g:each>
