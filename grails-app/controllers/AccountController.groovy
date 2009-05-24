@@ -1,7 +1,7 @@
 //Testing online editing on GitHub.
 class AccountController extends SecureController {
 
-    def allowedMethods = [index: 'GET', changePassword: 'POST', changePrivacy: 'POST']
+    static allowedMethods = [index: 'GET', changePassword: 'POST', changePrivacy: 'POST']
 
     def beforeInterceptor = [action: this.&auth]
 

@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class MailboxController extends SecureController {
 
-    def allowedMethods = [index: 'GET', showMessage: 'GET', archiveMessage: 'POST']
+    static allowedMethods = [index: 'GET', showMessage: 'GET', archiveMessage: 'POST']
 
     def beforeInterceptor = [action: this.&auth]
 

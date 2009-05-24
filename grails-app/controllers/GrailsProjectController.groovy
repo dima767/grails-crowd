@@ -10,7 +10,7 @@ class GrailsProjectController extends SecureController {
             'projectCreationForm',
             'postComment']]
 
-    def allowedMethods = [projectCreationForm: 'GET',
+    static allowedMethods = [projectCreationForm: 'GET',
             handleProjectCreation: 'POST',
             editProject: 'GET',
             updateProject: 'POST',

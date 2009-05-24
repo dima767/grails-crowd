@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class AuthenticationController extends ControllerSupport {
 
-    def allowedMethods = [loginForm: 'GET', handleLogin: 'POST']
+    static allowedMethods = [loginForm: 'GET', handleLogin: 'POST']
 
     def loginForm = {
         if (session.memberId) {

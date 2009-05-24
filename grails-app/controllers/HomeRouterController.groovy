@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class HomeRouterController extends SecureController {
 
-    def allowedMethods = [index: 'GET']
+    static allowedMethods = [index: 'GET']
 
     def index = {
         if (loggedIn()) {

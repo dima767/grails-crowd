@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class ProjectParticipationController extends SecureController {
 
-    def allowedMethods = [invite: 'POST', acceptParticipationInvitation: 'POST',
+    static allowedMethods = [invite: 'POST', acceptParticipationInvitation: 'POST',
             rejectParticipationInvitation: 'POST', requestParticipation: 'POST',
             approveParticipationRequest: 'POST', rejectParticipationRequest: 'POST', index: 'POST']
 

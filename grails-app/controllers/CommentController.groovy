@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class CommentController {
 	
-	def allowedMethods = [feed: 'GET', list: 'GET']
+	static allowedMethods = [feed: 'GET', list: 'GET']
 
     def list = {
 		withComments {

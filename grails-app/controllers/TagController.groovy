@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class TagController {
 
-    def allowedMethods = [globalCloud: 'GET', cloudForMember: 'GET']
+    static allowedMethods = [globalCloud: 'GET', cloudForMember: 'GET']
 
     def globalCloud = {
         render(view: 'tagCloud', model: [tagCounts: Tagging.globalTagCounts(), navMenu: 'globalTagCloudNavigation'])

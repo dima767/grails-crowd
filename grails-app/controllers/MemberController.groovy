@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class MemberController extends SecureController {
 
-    def allowedMethods = [registrationForm: 'GET', handleRegistration: 'POST',
+    static allowedMethods = [registrationForm: 'GET', handleRegistration: 'POST',
             findRandom: 'GET',
             editProfile: 'GET', saveProfile: 'POST', updateProfile: 'POST', viewProfile: 'GET',
 			listMemberLocations: 'GET', latestFeed: 'GET']

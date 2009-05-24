@@ -4,7 +4,7 @@ class GrailsAffiliationController extends SecureController {
 
     def beforeInterceptor = [action: this.&auth, only: ['add', 'delete']]
 
-    def allowedMethods = [create: 'GET', save: 'POST', delete: 'POST']
+    static allowedMethods = [create: 'GET', save: 'POST', delete: 'POST']
 
     def edit = {
     }

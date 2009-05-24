@@ -2,7 +2,7 @@ import grailscrowd.core.*
 
 class SearchController {
 
-	def allowedMethods = [searchForMembersAndProjects: 'GET', searchForMembersByFirstLetter: 'GET', searchForProjectsByFirstLetter: 'GET',
+	static allowedMethods = [searchForMembersAndProjects: 'GET', searchForMembersByFirstLetter: 'GET', searchForProjectsByFirstLetter: 'GET',
 						 searchForLocationsByFirstLetter: 'GET']
 
     def searchForMembersAndProjects = { 
