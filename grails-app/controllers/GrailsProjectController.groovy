@@ -187,10 +187,12 @@ class GrailsProjectController extends SecureController {
 				def recipients = grailsProject.uniqueMembersWhoPostedComments.findAll { it.canBeNotifiedViaEmail }.collect { it.email }
 				recipients += grailsProject.creator.email
 				recipients -= comment.member.email
+	
 				if(recipients) {
 					try {
 						sendMail {     
-							bcc recipients as Object[]
+							//Mails plugin BUG - currently bcc, cc doesn't work. Won't send blind emails for now. Hopefuly later versions of Mail plugin will address that.
+							bcc recipients.toArray()
 			   				subject "A new comment for project [${grailsProject.name}] has been posted"     
 			   				body "${comment.member.displayName} said:\n\n${comment.body}\n\nSee the comment in context: ${createLink(controller: 'grailsProject', action: 'viewProject', id: params.id, absolute: true)}"
 						}

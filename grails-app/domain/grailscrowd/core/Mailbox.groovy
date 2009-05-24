@@ -1,13 +1,13 @@
 package grailscrowd.core
-/** added a test line to determine svn working status (mgk) **/
-//The idea of mailbox is kind of like del.icio.us for:username idea.
-//The mailbox could be used to communicate invitations and requests approvals to join a project, etc.
-//Another way would be to use regular email, but that would be the "more intrusive" option, IMO 
 
 class Mailbox {
     static hasMany = [messages: Message]
     static belongsTo = [member: Member]
-    static fetchMode = [messages: 'eager']
+	
+	static mapping = {
+		messages fetch:'join'
+	}
+	
 
 
     def hasAnyDisplayableMessages() {

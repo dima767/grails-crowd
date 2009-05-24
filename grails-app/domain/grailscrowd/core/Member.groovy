@@ -60,9 +60,11 @@ class Member extends NumberOfViewsTrackable implements Comparable {
             taggings: Tagging, favoriteProjects: FavoriteProjectReference, endorsements: Endorsement]
 	
 	SortedSet taggings    
-	//static fetchMode = [projectParticipations: 'eager', affiliations: 'eager']
-
     Mailbox mailbox
+
+	static mapping = {
+		mailbox fetch:'join'
+	}
 
     def beforeInsert = {
         password = password.encodeAsEncryptedPassword()
