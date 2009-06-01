@@ -1,3 +1,5 @@
+import org.joda.time.*
+
 class NiceDateTagLib {
 
 	public static String getNiceDate(Date date) {
@@ -43,7 +45,39 @@ class NiceDateTagLib {
 
     }
 
+    public static String getNiceDateUsingJoda(Date date) {		
+		def from = null
+		def to = null
+		try {
+			from = new DateTime(date)
+			to = new DateTime(new Date())
+		}
+		catch(Exception e) {
+			return ''
+		}
 
+		Period period = new Period(from, to, PeriodType.yearMonthDayTime())
+		def mi = period.minutes
+		def h = period.hours
+		def d = period.days
+		def m = period.months
+		def y = period.years
+	
+		def output = ''
+		if(y > 0) output += "$y " + "year" + (y > 1 ? "s " : " ")
+		if(m > 0) output += "$m " + "month" + (m > 1 ? "s " : " ")
+		if(w > 0) output += "$w " + "week" + (w > 1 ? "s " : " ")
+		if(d > 0) output += "$d " + "day" + (d > 1 ? "s " : " ")
+		if(h > 0) output += "$h " + "hour" + (h > 1 ? "s " : " ")
+		if(mi > 0) output += "$mi " + "minute" + (mi > 1 ? "s " : " ")
+		if(output.size() > 0) {
+		    output += ' ago'
+		}
+		else {
+			output += 'less than a minute ago'
+		}
+		return output
+	}
 
 	def niceDate = { attrs, body ->
         def date = attrs.date
@@ -52,6 +86,6 @@ class NiceDateTagLib {
 	}
 	
 	def niceAgoDate = { attrs, body ->
-        out << getNiceDate(attrs.date)
+        out << getNiceDateUsingJoda(attrs.date)
 	}
 }
