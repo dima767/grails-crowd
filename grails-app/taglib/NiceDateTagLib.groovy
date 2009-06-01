@@ -66,7 +66,6 @@ class NiceDateTagLib {
 		def output = ''
 		if(y > 0) output += "$y " + "year" + (y > 1 ? "s " : " ")
 		if(m > 0) output += "$m " + "month" + (m > 1 ? "s " : " ")
-		if(w > 0) output += "$w " + "week" + (w > 1 ? "s " : " ")
 		if(d > 0) output += "$d " + "day" + (d > 1 ? "s " : " ")
 		if(h > 0) output += "$h " + "hour" + (h > 1 ? "s " : " ")
 		if(mi > 0) output += "$mi " + "minute" + (mi > 1 ? "s " : " ")
