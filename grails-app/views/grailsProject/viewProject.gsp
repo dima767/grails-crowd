@@ -49,7 +49,7 @@
                     <span class="content-font">
                         <g:if test="${grailsProject.uri}">
                             <label><g:message code="project.view.label.url" />:</label>
-                            <a href="${grailsProject.uri.encodeAsURL()}" target="_blank">${grailsProject.uri}</a>
+                            <a href="${grailsProject.uri}" target="_blank">${grailsProject.uri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>

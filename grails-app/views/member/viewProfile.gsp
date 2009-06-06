@@ -67,43 +67,43 @@
                 <p class="transparent-box">
                     <span class="content-font">
                         <g:if test="${member.homePageUri}">
-                            <label>Personal web resource (Blog, home page, etc.):</label> <a href="${member.homePageUri.encodeAsURL()}" target="_blank">${member.homePageUri.encodeAsHTML()}</a>
+                            <label>Personal web resource (Blog, home page, etc.):</label> <a href="${member.homePageUri}" target="_blank">${member.homePageUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.linkedInProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'linkedin.png')}" alt="LinkedIn"/>
-							<label>LinkedIn profile:</label> <a href="${member.linkedInProfileUri.encodeAsURL()}" target="_blank">${member.linkedInProfileUri.encodeAsHTML()}</a>
+							<label>LinkedIn profile:</label> <a href="${member.linkedInProfileUri}" target="_blank">${member.linkedInProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.twitterProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'twitter.png')}" alt="Twitter"/>
-							<label>Twitter profile:</label> <a href="${member.twitterProfileUri.encodeAsURL()}" target="_blank">${member.twitterProfileUri.encodeAsHTML()}</a>
+							<label>Twitter profile:</label> <a href="${member.twitterProfileUri}" target="_blank">${member.twitterProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.friendFeedProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'friendfeed.png')}" alt="FF"/>
-							<label>FriendFeed profile:</label> <a href="${member.friendFeedProfileUri.encodeAsURL()}" target="_blank">${member.friendFeedProfileUri.encodeAsHTML()}</a>
+							<label>FriendFeed profile:</label> <a href="${member.friendFeedProfileUri}" target="_blank">${member.friendFeedProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
                         <g:if test="${member.flickrProfileUri}">
                             <img src="${createLinkTo(dir:'images',file:'flickr.png')}" alt="Flickr"/>
-							<label>Flickr photos:</label> <a href="${member.flickrProfileUri.encodeAsURL()}" target="_blank">${member.flickrProfileUri.encodeAsHTML()}</a>
+							<label>Flickr photos:</label> <a href="${member.flickrProfileUri}" target="_blank">${member.flickrProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
 						<g:if test="${member.deliciousProfileUri}">
 							<img src="${createLinkTo(dir:'images',file:'delicious.png')}" alt="Delicious"/>
-                            <label>Delicious bookmarks:</label> <a href="${member.deliciousProfileUri.encodeAsURL()}" target="_blank">${member.deliciousProfileUri.encodeAsHTML()}</a>
+                            <label>Delicious bookmarks:</label> <a href="${member.deliciousProfileUri}" target="_blank">${member.deliciousProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
 						<g:if test="${member.ohlohProfileUri}">
 							<img src="${createLinkTo(dir:'images',file:'ohloh.png')}" alt="Ohloh"/>
-                            <label>Ohloh profile:</label> <a href="${member.ohlohProfileUri.encodeAsURL()}" target="_blank">${member.ohlohProfileUri.encodeAsHTML()}</a>
+                            <label>Ohloh profile:</label> <a href="${member.ohlohProfileUri}" target="_blank">${member.ohlohProfileUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
@@ -121,7 +121,7 @@
                             <br />
                         </g:if>
                         <g:if test="${member.companyUri}">
-                            <label>Company URL:</label> <a href="${member.companyUri.encodeAsURL()}" target="_blank">${member.companyUri.encodeAsHTML()}</a>
+                            <label>Company URL:</label> <a href="${member.companyUri}" target="_blank">${member.companyUri.encodeAsHTML()}</a>
                             <br />
                             <br />
                         </g:if>
@@ -138,7 +138,7 @@
                 <br />
                 <p class="transparent-box">
                     <span class="content-font">
-                        You can contact me directly. My email address is: <b><a class="inline-link" href="mailto:${member.email.encodeAsURL()}">${member.email.encodeAsHTML()}</a></b>
+                        You can contact me directly. My email address is: <b><a class="inline-link" href="mailto:${member.email}">${member.email.encodeAsHTML()}</a></b>
                     </span>
                 </p>
             </g:if>
