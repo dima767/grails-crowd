@@ -30,7 +30,7 @@
 
             <div class="description-box">
                 <span class="content-font">
-                    ${grailsProject.description.encodeAsHTML().encodeAsTextile()}
+                    ${grailsProject.description.encodeAsTextile()}
                 </span>
             </div>
 
@@ -38,7 +38,7 @@
                 <h4 class="page-section-header">Architecture description</h4>
                 <div class="transparent-box">
                     <span class="content-font">
-                        ${grailsProject.architectureDescription.encodeAsHTML().encodeAsTextile()}
+                        ${grailsProject.architectureDescription.encodeAsTextile()}
                     </span>
                 </div>
             </g:if>
@@ -74,7 +74,7 @@
 							</span>
 							<br/>
 							<br/>
-                            <span class="content-font">${comment.body.encodeAsHTML().encodeAsTextile()}</span>
+                            <span class="content-font">${comment.body.encodeAsTextile()}</span>
                         </div>
 						<br/>
                 </g:each>

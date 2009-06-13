@@ -34,7 +34,7 @@
             <div class="description-box">
                 <span class="content-font">
                 <g:if test="${member.about}">
-                    ${member.about.encodeAsHTML().encodeAsTextile()}
+                    ${member.about.encodeAsTextile()}
                 </g:if>
                 <g:else>
                     My name is <b>${member.displayName.encodeAsHTML()}</b> and I'm now a part of the friendly Grails community! I haven't had a chance to write a few words about myself yet. 

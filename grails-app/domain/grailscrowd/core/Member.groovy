@@ -27,12 +27,14 @@ class Member extends NumberOfViewsTrackable implements Comparable {
     String friendFeedProfileName
 	String deliciousProfileName
 	String ohlohProfileName
+	String facebookProfileName
 
     private static FLICKR_BASE_URI = 'http://flickr.com'
     private static TWITTER_BASE_URI = 'http://twitter.com'
     private static FRIEND_FEED_BASE_URI = 'http://friendfeed.com'
 	private static DELICIOUS_BASE_URI = 'http://delicious.com'
 	private static OHLOH_BASE_URI = 'http://www.ohloh.net/accounts'
+	private static FACEBOOK_BASE_URI = 'http://facebook.com'
 
     static constraints = {
         name(blank: false, unique: true, matches: "[a-zA-Z0-9_]+")
@@ -53,6 +55,7 @@ class Member extends NumberOfViewsTrackable implements Comparable {
         friendFeedProfileName(nullable: true)
 		deliciousProfileName(nullable: true)
 		ohlohProfileName(nullable: true)
+		facebookProfileName(nullable: true)
 		lastLogin(nullable: true)
     }
 
@@ -106,6 +109,10 @@ class Member extends NumberOfViewsTrackable implements Comparable {
 	def getOhlohProfileUri() {
         this.ohlohProfileName != null ? "$OHLOH_BASE_URI/$ohlohProfileName" : null
     }
+
+	def getFacebookProfileUri() {
+		this.facebookProfileName != null ? "FACEBOOK_BASE_URI/$facebookProfileName" : null
+	}
 
     def availableForHireAsString() {
         availableForHire ? 'Yes' : 'No'

@@ -81,7 +81,7 @@
 					</span>
 					<br/>
 					<br/>
-                    <span class="content-font">${comment.body.encodeAsHTML().encodeAsTextile()}</span>
+                    <span class="content-font">${comment.body.encodeAsTextile()}</span>
                 </div>
 				<br/>
         </g:each>
