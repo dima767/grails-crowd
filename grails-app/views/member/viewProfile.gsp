@@ -107,6 +107,12 @@
                             <br />
                             <br />
                         </g:if>
+						<g:if test="${member.facebookProfileUri}">
+							<img src="${createLinkTo(dir:'images',file:'facebook.png')}" alt="Facebook"/>
+                            <label>Facebook profile:</label> <a href="${member.facebookProfileUri}" target="_blank">${member.facebookProfileUri.encodeAsHTML()}</a>
+                            <br />
+                            <br />
+                        </g:if>
                     </span>
                 </p>
             </g:if>

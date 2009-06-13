@@ -111,7 +111,7 @@ class Member extends NumberOfViewsTrackable implements Comparable {
     }
 
 	def getFacebookProfileUri() {
-		this.facebookProfileName != null ? "FACEBOOK_BASE_URI/$facebookProfileName" : null
+		this.facebookProfileName != null ? "$FACEBOOK_BASE_URI/$facebookProfileName" : null
 	}
 
     def availableForHireAsString() {
