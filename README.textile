@@ -1,7 +1,9 @@
 h1. The mission
+
 GrailsCrowd aims to bring social directory of the people involved with Grails in any way shape or form to the Web.
 
 h1. How to checkout and be up and running in the dev mode
+
 After fresh checkout from VCS, run the following command:
 
 	'grails upgrade'
