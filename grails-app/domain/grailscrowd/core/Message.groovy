@@ -176,6 +176,10 @@ class Message {
                 this.kind == PROJECT_REQUEST_APPROVAL || this.kind == PROJECT_REQUEST_DISAPPROVAL
     }
 
+	def isDirect() {
+		this.kind == OTHER
+	}
+
     private static withMessage(Map args, Closure callable) {
         def message = new Message(subject: args.subject)
         message.body = args.body

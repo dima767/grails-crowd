@@ -18,7 +18,12 @@
 
             <span class="content-font">
                 <p>
-                    ${message.body.encodeAsHTML()}                    
+                    <g:if test="${message.isDirect()}">
+						${message.body.encodeAsHTML()}
+					</g:if>
+					<g:else>
+						${message.body}
+					</g:else>	                    
                 </p>
                 <g:render template="messageVariation" model="[message:message]" />
                 <g:link class="inline-link" controller="mailbox">&laquo; Go back to mailbox</g:link>
