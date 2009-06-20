@@ -16,8 +16,8 @@ Optionally if you want to upgrade any of the installed plugins to different vers
 	'grails install-plugin avatar'
 	'grails install-plugin mail'
 
-Also change the email related settings in conf/Config.groovy
+Also change the email related settings in grails-app/conf/Config.groovy
 
-Don't forget to peek into conf/DataSource.groovy for the database configuration details.
+Don't forget to peek into grails-app/conf/DataSource.groovy for the database configuration details.
 
 Happy hacking...
