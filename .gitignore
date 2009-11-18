@@ -6,6 +6,11 @@ test/reports
 web-app/WEB-INF
 web-app/plugins
 web-app/index.gsp
+web-app/images/grails_logo.png
+web-app/images/leftnav_btm.png
+web-app/images/leftnav_midstretch.png
+web-app/images/leftnav_top.png
+web-app/images/springsource.png
 .classpath
 .project
 .settings
