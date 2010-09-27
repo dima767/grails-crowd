@@ -1,3 +1,5 @@
+h1. ***NOTICE: THIS PROJECT IS NOT MAINTAINED ANY MORE. DO NOT HESITATE TO FORK IT AND HACK AWAY***
+
 h1. The mission
 
 GrailsCrowd aims to bring social directory of the people involved with Grails in any way shape or form to the Web.
